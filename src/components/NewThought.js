@@ -12,7 +12,7 @@ class NewThought extends Component {
         super(props);
         this.state = { 
             automaticThought: "", 
-            intensity: null,  
+            intensity: "",  
             alternativeThought: "",
             task: "", 
             category: "", 
@@ -28,12 +28,12 @@ class NewThought extends Component {
         const category = this.state.category;
 
        axios
-        .post("http://localhost:4000/thoughts/thoughts/add", { automaticThought, intensity, alternativeThought, task, category })
+        .post("http://localhost:4000/thoughts/thoughts/add",  { automaticThought, intensity, alternativeThought, task, category }, {withCredentials: true})
         .then(()=>{
             this.props.getData();
             this.setState({ 
                 automaticThought: "",
-                intensity: null, 
+                intensity: "", 
                 alternativeThought: "", 
                 task: "",
                 category: "", 
@@ -54,32 +54,32 @@ class NewThought extends Component {
            <form onSubmit={this.handleFormSubmit}>
            <label>Pensamiento Automático:</label>
            <textarea 
-           name="Pensamiento Automático"
-            value={this.state.automaticThought}
+           name="automaticThought"
+           value={this.state.automaticThought}
             onChange={e => this.handleChange(e)}
-            />
+            /> 
 
 
             <label>Intensidad:</label>
            <input
             type="number"
-            name="intensidad"
+            name="intensity"
             value={this.state.intensity}
             onChange={e => this.handleChange(e)}
            />
 
            <label>Pensamiento Alternativo:</label>
            <textarea 
-           name="Pensamiento Alternativo"
-            value={this.state.alternativeThought}
+           name="alternativeThought"
+           value={this.state.alternativeThought}
             onChange={e => this.handleChange(e)}
             />
 
 
             <label>Tarea Compensatoria:</label>
            <textarea 
-           name="Tarea compensatoria"
-            value={this.state.task}
+           name="task"
+           value={this.state.task}
             onChange={e => this.handleChange(e)}
             />
             
@@ -87,7 +87,7 @@ class NewThought extends Component {
             <label>Categoria:</label>
            <input
             type="text"
-            name="categoria"
+            name="category"
             value={this.state.category}
             onChange={e => this.handleChange(e)}
            />

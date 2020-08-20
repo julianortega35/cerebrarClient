@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 import axios from 'axios';
-import EditThought from "./components/EditThought";
+import EditThought from "./EditThought";
 import { Link } from "react-router-dom";
 
 

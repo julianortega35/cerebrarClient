@@ -9,10 +9,10 @@ import Private from "./pages/Private";
 import AuthProvider from "./lib/AuthProvider";
 import AnonRoute from "./components/AnonRoute";
 import PrivateRoute from "./components/PrivateRoute";
-import ThoughtsList from ".components/ThoughtsList"
-import NewThought from ".components/NewThought"
-import EditThought from ".components/EditThought"
-import ThoughtDetails from ".components/ThoughtDetails"
+import ThoughtsList from "./components/ThoughtsList"
+import NewThought from "./components/NewThought"
+import EditThought from "./components/EditThought"
+import ThoughtDetails from "./components/ThoughtDetails"
 
 class App extends Component {
   render() {
@@ -26,10 +26,10 @@ class App extends Component {
 
   
         <Switch>
-        <Route exact path="/thoughts" component={ThoughtsList} />
-        <Route exact path="/thoughts/thoughts/add" component={NewThought} />
-        <Route exact path="/thoughts/thoughts/edit" component={EditThought} />
-        <Route exact path="/thoughts/thoughts" component={ThoughtDetails} />
+        <Route exact path="/thoughtslist" component={ThoughtsList} />
+        <Route exact path="/add" component={NewThought} />
+        <Route exact path="/edit/:id" component={EditThought} />
+        <Route exact path="/details/:id" component={ThoughtDetails} />
       <AnonRoute path="/signup" component={Signup} />
       <AnonRoute path="/login" component={Login} />	
       <PrivateRoute path="/private" component={Private} />{/* <Route> to <PrivateRoute>*/}

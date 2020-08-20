@@ -11,8 +11,9 @@ class ThoughtsList extends Component {
     }
 
     getAllThoughts = () => {
-        axios.get(`http://localhost:4000/thoughts/thoughts`).then(responseFromApi =>{
-            this.setState({
+        axios.get(`http://localhost:4000/thoughts/thoughts`, {withCredentials: true}).then(responseFromApi =>{
+            console.log(responseFromApi.data)
+        this.setState({
                 listOfThoughts: responseFromApi.data
             });
         });
@@ -31,8 +32,8 @@ render() {
           {this.state.listOfThoughts.map(thoughts => {
             return (
               <div key={thoughts._id}>
-                <Link to={`/thoughts/${thoughts._id}`}>
-                  <h3>{thoughts.automaticThoughts}</h3>
+                <Link to={`/details/${thoughts._id}`}>
+                  <h3>{thoughts.automaticThought}</h3>
                 </Link>
                 {/* <ul>
                   {project.tasks.map((task,index) =>{
