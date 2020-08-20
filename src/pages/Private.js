@@ -6,7 +6,7 @@ class Private extends Component {
   render() {
     return (
       <div>
-         <h1>Welcome {this.props.user.username}</h1>
+         <h1>Welcome {this.props.user.nickname}</h1>
       </div>
     );
   }
