@@ -1,4 +1,4 @@
-// components/tasks/TaskDetails.js
+
 
 import React, { Component } from 'react';
 import axios from 'axios';
@@ -14,26 +14,28 @@ import { Link } from "react-router-dom";
     }
 
     componentDidMount(){
-        this.getSingleThought();
+      const {params} = this.props.match;
+      axios
+      .get(`http://localhost:4000/thoughts/thoughts/${params.id}`, {withCredentials: true})
+  
+      .then((responseFromApi) =>{
+          const theThought = responseFromApi.data;
+          console.log(responseFromApi.data)
+          this.setState(theThought);
+      })
+      .catch((err)=>{
+          console.log(err)
+      })
+        // this.getSingleThought();
     }
 
     getSingleThought = () => {
-        const {params} = this.props.match;
-    axios
-    .get(`http://localhost:4000/thoughts/thoughts/${params.taskId}`)
-
-    .then((responseFromApi) =>{
-        const theThought = responseFromApi.data;
-        this.setState(theThought);
-    })
-    .catch((err)=>{
-        console.log(err)
-    })
+     
 }
 
 renderEditForm = () => {
     if (!this.state.title) {
-      this.getSingleTask();
+      this.getSingleThought();
     } else {
       //{...props} => so we can have 'this.props.history' in Edit.js
       return (
@@ -51,7 +53,7 @@ renderEditForm = () => {
   deleteThought = () => {
     const { params } = this.props.match;
     axios
-      .delete(`http://localhost:4000/thoughts/thoughts/${params.taskId}`)
+      .delete(`http://localhost:4000/thoughts/thoughts/${params.thoughtId}`)
       .then(() => {
         this.props.history.push("/thoughts/thoughts");
       })
@@ -65,17 +67,17 @@ renderEditForm = () => {
         return (
             <div>
               <h3>Pensamiento</h3>
-        <h2>{this.state.automaticThought}</h2>
-        <p>{this.state.intensity}</p>
-        <p>{this.state.alternativeThought}</p>
-        <p>{this.state.task}</p>
-        <p>{this.state.category}</p>
+        <h2>Pensamiento automático: {this.state.automaticThought}</h2>
+        <p>Intesidad: {this.state.intensity}</p>
+        <p> Pensamiento alternativo: {this.state.alternativeThought}</p>
+        <p>Tarea compensatoria: {this.state.task}</p>
+        <p>Categoría: {this.state.category}</p>
          {/* To go back we can use react-router-dom method `history.goBack()` available on `props` object */}
          
          
          <div>{this.renderEditForm()} </div>
 
-         <Link to={"/thoughts"}>Volver al listado de pensamientos</Link>
+         <Link to={"/thoughtslist"}>Volver al listado de pensamientos</Link>
          <button onClick={() => this.deleteThought()}>Eliminar Pensamiento</button>
             </div>
         )

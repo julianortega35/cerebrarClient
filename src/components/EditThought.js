@@ -10,7 +10,7 @@ class EditThought extends Component {
            automaticThought: this.props.state.automaticThought,
            intensity: this.props.state.intensity,
            alternativeThought: this.props.state.alternativeThought,
-           tasks: this.props.state.tasks,
+           task: this.props.state.task,
            category: this.props.state.category,
            
         };
@@ -21,7 +21,7 @@ class EditThought extends Component {
       const automaticThought = this.state.automaticThought;
       const intensity = this.state.intensity;
       const alternativeThought = this.state.alternativeThought;
-      const task = this.state.tasks;
+      const task = this.state.task;
       const category = this.state.category;
       
     

@@ -21,6 +21,7 @@ class NewThought extends Component {
 
    handleFormSubmit = event => {
        event.preventDefault();
+       console.log(this.state)
         const automaticThought = this.state.automaticThought;
         const intensity = this.state.intensity;
         const alternativeThought = this.state.alternativeThought;
@@ -30,7 +31,7 @@ class NewThought extends Component {
        axios
         .post("http://localhost:4000/thoughts/thoughts/add",  { automaticThought, intensity, alternativeThought, task, category }, {withCredentials: true})
         .then(()=>{
-            this.props.getData();
+            // this.props.getTheThought();
             this.setState({ 
                 automaticThought: "",
                 intensity: "", 
@@ -52,6 +53,7 @@ class NewThought extends Component {
        return(
            <div>
            <form onSubmit={this.handleFormSubmit}>
+           <h1>Agregar un nuevo pensamiento</h1>
            <label>Pensamiento Automático:</label>
            <textarea 
            name="automaticThought"
@@ -64,6 +66,7 @@ class NewThought extends Component {
            <input
             type="number"
             name="intensity"
+            placeholder="0-10"
             value={this.state.intensity}
             onChange={e => this.handleChange(e)}
            />

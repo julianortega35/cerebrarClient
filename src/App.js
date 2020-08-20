@@ -22,7 +22,7 @@ class App extends Component {
       <AuthProvider>  
         <Navbar />
 
-        <h1>Cerebrar</h1>
+  
 
   
         <Switch>
