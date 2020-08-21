@@ -1,20 +1,46 @@
 
 import React, { Component } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 class EditThought extends Component {
     constructor (props){
         super(props);
         this.state = {
 
-           automaticThought: this.props.state.automaticThought,
-           intensity: this.props.state.intensity,
-           alternativeThought: this.props.state.alternativeThought,
-           task: this.props.state.task,
-           category: this.props.state.category,
+           automaticThought: "",
+           intensity: "",
+           alternativeThought: "",
+           task: "",
+           category: "",
            
         };
     }
+
+    componentDidMount(){
+      const {params} = this.props.match;
+      axios
+      .get(`${process.env.REACT_APP_API_URI}/thoughts/${params.id}`, {withCredentials: true})
+  
+      .then((responseFromApi) =>{
+        
+          const theThought = responseFromApi.data;
+          console.log(responseFromApi.data)
+          this.setState({
+             automaticThought: theThought.automaticThought,
+             intensity: theThought.intensity,
+             alternativeThought: theThought.alternativeThought,
+             task: theThought.task,
+             category: theThought.category,
+            });
+      })
+      .catch((err)=>{
+          console.log(err)
+      })
+        // this.getSingleThought();
+    }
+
+
 
     handleFormSubmit = event => {
 
@@ -26,55 +52,73 @@ class EditThought extends Component {
       
     
         event.preventDefault();
-
+        const {params} = this.props.match;
         axios
-        .put(`http://localhost:4000/api/thoughts/edit/${this.props.theThought._id}`, {
+        .put(`${process.env.REACT_APP_API_URI}/thoughts/edit/${params.id}`, {
           automaticThought, 
           intensity,
           alternativeThought, 
           task, 
           category
-          })
+          }, {withCredentials: true})
         .then(()=>{
-            this.props.getTheThoguht();
+            // this.props.getTheThought();
               // after submitting the form, redirect to '/projects'
-              this.props.history.push("/thoughts");
+              this.props.history.push("/thoughtslist");
         })
         .catch((error) => console.log (error));
     };
 
 
-    handleChangeautomaticThought = event => {
-      this.setState({
-        automaticThought: event.target.value
-      });
-  };
+
+   
+
+    getSingleThought = () => {
+     
+}
 
 
-  handleChangeintensity = event => {
-    this.setState({
-      intensity: event.target.value
-    });
-  };
 
-  handleChangealternativeThought = event => {
-    this.setState({
-      alternativeThought: event.target.value
-    });
-};
+  //   handleChangeautomaticThought = event => {
+  //     this.setState({
+  //       automaticThought: event.target.value
+  //     });
+  // };
 
-  handleChangetask = event => {
-    this.setState({
-      task: event.target.value
-    });
-  };
 
-  handleChangecategory = event => {
-    this.setState({
-      category: event.target.value
-    });
-  };
+//   handleChangeintensity = event => {
+//     this.setState({
+//       intensity: event.target.value
+//     });
+//   };
 
+//   handleChangealternativeThought = event => {
+//     this.setState({
+//       alternativeThought: event.target.value
+//     });
+// };
+
+//   handleChangetask = event => {
+//     this.setState({
+//       task: event.target.value
+//     });
+//   };
+
+//   handleChangecategory = event => {
+//     this.setState({
+//       category: event.target.value
+//     });
+//   };
+
+
+handleChange = event => {
+  console.log(event.target)
+  const {name, value} = event.target;
+  this.setState({
+    [name]:value
+  })
+}
+  
 
 
 render() {
@@ -86,44 +130,47 @@ render() {
         
         <label>Pensamiento Automático:</label>
            <textarea 
-           name="Pensamiento Automático"
+           name="automaticThought"
             value={this.state.automaticThought}
-            onChange={e => this.handleChange(e)}
+            onChange={this.handleChange}
             />
 
 
             <label>Intensidad:</label>
            <input
             type="number"
-            name="intensidad"
+            name="intensity"
             value={this.state.intensity}
-            onChange={e => this.handleChange(e)}
+            onChange={this.handleChange}
            />
 
            <label>Pensamiento Alternativo:</label>
            <textarea 
-           name="Pensamiento Alternativo"
+           name="alternativeThought"
             value={this.state.alternativeThought}
-            onChange={e => this.handleChange(e)}
+            onChange={this.handleChange}
             />
 
 
             <label>Tarea Compensatoria:</label>
            <textarea 
-           name="Tarea compensatoria"
+           name="task"
             value={this.state.task}
-            onChange={e => this.handleChange(e)}
+            onChange={this.handleChange}
             />
           
             <label>Categoria:</label>
            <input
             type="text"
-            name="categoria"
+            name="category"
             value={this.state.category}
-            onChange={e => this.handleChange(e)}
+            onChange={this.handleChange}
            />
           <input type="submit" value="Submit" />
         </form>
+
+
+        <Link to={"/thoughtslist"}>Volver al listado de pensamientos</Link>
       </div>
     );
   }

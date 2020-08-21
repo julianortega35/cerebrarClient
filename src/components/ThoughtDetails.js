@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
     componentDidMount(){
       const {params} = this.props.match;
       axios
-      .get(`http://localhost:4000/thoughts/thoughts/${params.id}`, {withCredentials: true})
+      .get(`${process.env.REACT_APP_API_URI}/thoughts/${params.id}`, {withCredentials: true})
   
       .then((responseFromApi) =>{
           const theThought = responseFromApi.data;
@@ -53,7 +53,7 @@ renderEditForm = () => {
   deleteThought = () => {
     const { params } = this.props.match;
     axios
-      .delete(`http://localhost:4000/thoughts/thoughts/${params.thoughtId}`)
+      .delete(`${process.env.REACT_APP_API_URI}/thoughts/thoughts/${params.id}`)
       .then(() => {
         this.props.history.push("/thoughts/thoughts");
       })
@@ -61,9 +61,11 @@ renderEditForm = () => {
         console.log(err);
       });
   };
+
   
 
     render() {
+      const {params} = this.props.match;
         return (
             <div>
               <h3>Pensamiento</h3>
@@ -78,7 +80,9 @@ renderEditForm = () => {
          <div>{this.renderEditForm()} </div>
 
          <Link to={"/thoughtslist"}>Volver al listado de pensamientos</Link>
+         <Link to={`/edit/${params.id}`}>Editar un pensamiento</Link>
          <button onClick={() => this.deleteThought()}>Eliminar Pensamiento</button>
+
             </div>
         )
     }

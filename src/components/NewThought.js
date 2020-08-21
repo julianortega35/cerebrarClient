@@ -29,7 +29,7 @@ class NewThought extends Component {
         const category = this.state.category;
 
        axios
-        .post("http://localhost:4000/thoughts/thoughts/add",  { automaticThought, intensity, alternativeThought, task, category }, {withCredentials: true})
+        .post(`${process.env.REACT_APP_API_URI}/thoughts/add`,  { automaticThought, intensity, alternativeThought, task, category }, {withCredentials: true})
         .then(()=>{
             // this.props.getTheThought();
             this.setState({ 

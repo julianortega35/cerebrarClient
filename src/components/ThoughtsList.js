@@ -11,7 +11,7 @@ class ThoughtsList extends Component {
     }
 
     getAllThoughts = () => {
-        axios.get(`http://localhost:4000/thoughts/thoughts`, {withCredentials: true}).then(responseFromApi =>{
+        axios.get(`${process.env.REACT_APP_API_URI}/thoughts`, {withCredentials: true}).then(responseFromApi =>{
             console.log(responseFromApi.data)
         this.setState({
                 listOfThoughts: responseFromApi.data
