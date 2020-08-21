@@ -35,18 +35,18 @@ render() {
                 <Link to={`/details/${thoughts._id}`}>
                   <h3>{thoughts.automaticThought}</h3>
                 </Link>
-                {/* <ul>
-                  {project.tasks.map((task,index) =>{
-                    return <li key={index}>{task.title}</li>                  })}
-                </ul> */}
-                {/* <p style={{maxWidth: '400px'}} >{project.description} </p> */}
+
+               
               </div>
             );
           })}
-        </div>
-        <div>
+        
           {/* <AddProject getData={() => this.getAllProjects()} /> <== !!! */}
         </div>
+      
+        <Link to="/add">
+        <button> Agregar un nuevo pensamiento</button>
+        </Link>
       </div>
     );
   }

@@ -68,8 +68,8 @@ renderEditForm = () => {
       const {params} = this.props.match;
         return (
             <div>
-              <h3>Pensamiento</h3>
-        <h2>Pensamiento automático: {this.state.automaticThought}</h2>
+              <h2>Detalles de una Pensamiento</h2>
+        <h4>Pensamiento automático: {this.state.automaticThought}</h4>
         <p>Intesidad: {this.state.intensity}</p>
         <p> Pensamiento alternativo: {this.state.alternativeThought}</p>
         <p>Tarea compensatoria: {this.state.task}</p>
@@ -79,8 +79,20 @@ renderEditForm = () => {
          
          <div>{this.renderEditForm()} </div>
 
-         <Link to={"/thoughtslist"}>Volver al listado de pensamientos</Link>
-         <Link to={`/edit/${params.id}`}>Editar un pensamiento</Link>
+         <Link to="/thoughtslist">
+         <button>Volver al listado de pensamientos</button>
+         </Link>
+           
+
+         <Link to="/add">
+        <button> Agregar un nuevo pensamiento</button>
+        </Link>
+        
+         <Link to={`/edit/${params.id}`}>
+         <button>
+         Editar un pensamiento</button>
+        </Link>
+        
          <button onClick={() => this.deleteThought()}>Eliminar Pensamiento</button>
 
             </div>

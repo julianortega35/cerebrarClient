@@ -1,6 +1,11 @@
  
 import React, { Component } from 'react'
 import axios from "axios";
+import { Link } from "react-router-dom";
+
+
+
+
 
 //Comenzaremos construyendo el componente <AddProject />. Este componente mostrará el formulario y se encargará de su envío. 
 // Al manejar el envío del formulario, nos referimos al uso de axios para llegar a una ruta back-end y entregar algunos datos enviados desde el frontend 
@@ -94,10 +99,18 @@ class NewThought extends Component {
             value={this.state.category}
             onChange={e => this.handleChange(e)}
            />
+            
 
             <input type="submit" value="Submit"/>
+
+         
            </form>
+           <Link to="/thoughtslist">
+         <button>Volver al listado de pensamientos</button>
+         </Link>
+           
            </div>
+           
        );
    };   
 };

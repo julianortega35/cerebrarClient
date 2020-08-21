@@ -9,7 +9,7 @@ class Profile extends Component {
 
             // nickname: "",
             // password: "",
-            // description: "",
+          
             // image: "",
             // myThoughts: "",
             // favourites:"",
@@ -40,7 +40,9 @@ class Profile extends Component {
 
                 <h3>Información del usuario</h3>
                 <div>{this.state.nickname}</div>
-                 <div>{this.state.description}</div>
+                
+
+                
                 
             </div>
         )

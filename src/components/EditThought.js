@@ -166,11 +166,13 @@ render() {
             value={this.state.category}
             onChange={this.handleChange}
            />
-          <input type="submit" value="Submit" />
+          <input type="submit" value="Editar" />
         </form>
 
-
-        <Link to={"/thoughtslist"}>Volver al listado de pensamientos</Link>
+ <Link to="/thoughtslist">
+         <button>Volver al listado de pensamientos</button>
+         </Link>
+           
       </div>
     );
   }
