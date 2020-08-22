@@ -101,7 +101,7 @@ class NewThought extends Component {
            />
             
 
-            <input type="submit" value="Submit"/>
+            <input type="submit" value="Agregar"/>
 
          
            </form>

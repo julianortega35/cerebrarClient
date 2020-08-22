@@ -15,7 +15,7 @@ nav.navbar {
 
 nav.navbar .navbar-user{
   margin-left: 10px;
-  color: white;
+
 }
 
 button.navbar-button {
@@ -29,3 +29,7 @@ button.navbar-button {
   color: white;
   text-decoration: none;
 }
+
+
+
+

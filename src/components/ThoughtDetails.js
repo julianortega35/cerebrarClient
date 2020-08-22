@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 
 
 
+
  class ThoughtDetails extends Component {
     constructor (props){
         super(props);
@@ -50,6 +51,7 @@ renderEditForm = () => {
 
   //DELETE THOUGHT
 
+
   deleteThought = () => {
     const { params } = this.props.match;
     axios
@@ -85,14 +87,18 @@ renderEditForm = () => {
            
 
          <Link to="/add">
-        <button> Agregar un nuevo pensamiento</button>
+        <button className="myButton"> Agregar un nuevo pensamiento</button>
         </Link>
         
          <Link to={`/edit/${params.id}`}>
-         <button>
+         <button >
          Editar un pensamiento</button>
         </Link>
-        
+
+       
+
+       
+
          <button onClick={() => this.deleteThought()}>Eliminar Pensamiento</button>
 
             </div>

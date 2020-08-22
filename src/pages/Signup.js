@@ -22,21 +22,21 @@ class Signup extends Component {
     const { nickname, password } = this.state;
     return (
       <div>
-        <h1>Sign Up</h1>
+        <h1>Crear cuenta</h1>
 
         <form onSubmit={this.handleFormSubmit}>
 
-          <label>Nickname:</label>
+          <label>Apodo:</label>
           <input type="text" name="nickname" value={nickname} onChange={this.handleChange} />
 
-          <label>Password:</label>
+          <label>Clave:</label>
           <input type="password" name="password" value={password} onChange={this.handleChange} />
 
-          <input type="submit" value="Signup" />
+          <input type="submit" value="Crear" />
         </form>
         
-        <p>Already have account?</p>
-        <Link to={"/login"}> Login</Link>
+        <p>¿Ya tienes una cuenta?</p>
+        <Link to={"/login"}> Ingresar</Link>
       </div>
     );
   }

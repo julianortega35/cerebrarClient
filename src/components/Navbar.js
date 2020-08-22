@@ -15,17 +15,17 @@ class Navbar extends Component {
         {
           isLoggedin ? 
           (<>
-            <p className="navbar-user">nickname: {user.nickname}</p>	
-            <button className="navbar-button" onClick={logout}>Logout</button>	
+            <p className="navbar-user">{user.nickname}</p>	
+            <button className="navbar-button" onClick={logout}>Cerrar sesión</button>	
           </>) 
          : 
           (<>
             <Link to="/login">
-              <button className="navbar-button">Login</button>
+              <button className="navbar-button">Ingresar</button>
             </Link>
             <br />
             <Link to="/signup">
-              <button className="navbar-button">Sign Up</button>
+              <button className="navbar-button">Crear cuenta</button>
             </Link>
           </>)
         }

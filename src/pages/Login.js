@@ -22,17 +22,17 @@ class Login extends Component {
 
     return (
       <div>
-        <h1>Login</h1>
+        <h1>Ingresar</h1>
 
         <form onSubmit={this.handleFormSubmit}>
           
-          <label>Nickname:</label>
+          <label>Apodo:</label>
           <input type="text" name="nickname" value={nickname} onChange={this.handleChange}/>
 
-          <label>Password:</label>
+          <label>Clave:</label>
           <input type="password" name="password" value={password} onChange={this.handleChange} />
 
-          <input type="submit" value="Login" />
+          <input type="submit" value="Ingresar" />
         </form>
       </div>
     );

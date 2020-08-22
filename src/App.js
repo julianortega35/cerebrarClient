@@ -15,6 +15,7 @@ import EditThought from "./components/EditThought"
 import ThoughtDetails from "./components/ThoughtDetails"
 import Profile from "./components/Profile"
 
+
 class App extends Component {
   render() {
     return (
@@ -22,20 +23,21 @@ class App extends Component {
 
       <AuthProvider>  
         <Navbar />
+      
 
   
 
   
         <Switch>
-        <Route exact path="/thoughtslist" component={ThoughtsList} />
-        <Route exact path="/add" component={NewThought} />
-        <Route exact path="/edit/:id" component={EditThought} />
-        <Route exact path="/details/:id" component={ThoughtDetails} />
-      <AnonRoute path="/signup" component={Signup} />
+        <AnonRoute path="/signup" component={Signup} />
       <AnonRoute path="/login" component={Login} />	
-      <PrivateRoute path="/profile" component={Profile} />
-      <PrivateRoute path="/private" component={Private} />{/* <Route> to <PrivateRoute>*/}
-       </Switch>
+        <PrivateRoute exact path="/thoughtslist" component={ThoughtsList} />
+        <PrivateRoute exact path="/add" component={NewThought} />
+        <PrivateRoute exact path="/edit/:id" component={EditThought} />
+        <PrivateRoute exact path="/details/:id" component={ThoughtDetails} />
+        <PrivateRoute path="/profile" component={Profile} />
+        <PrivateRoute path="/private" component={Private} />{/* <Route> to <PrivateRoute>*/}
+        </Switch>
         </AuthProvider> 
       </div>
     );
