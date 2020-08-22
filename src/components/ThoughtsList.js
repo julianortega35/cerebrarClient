@@ -33,9 +33,9 @@ class ThoughtsList extends Component {
     // el array y de los pensamientos - this.state.listOfThoughts
     const thoughtsCopy = [...this.state.listOfThoughts];
     const filteredThoughts = thoughtsCopy.filter((thoughtObj) =>{
-      const category = thoughtObj.category.toLowerCase();
+      const automaticThought = thoughtObj.automaticThought.toLowerCase();
 
-      if (category.includes(lowerSearchString)){
+      if (automaticThought.includes(lowerSearchString)){
         return true
       }
       else{
@@ -66,9 +66,10 @@ render() {
             return (
               <div key={thoughts._id}>
                 <Link to={`/details/${thoughts._id}`}>
-                  <h3>{thoughts.automaticThought}</h3>
+                <img className="brain-2-size" src="/images/brain-2.png" alt="logo"/>
+                <h3>{thoughts.automaticThought}</h3>
                 </Link>
-
+                
                
               </div>
             );

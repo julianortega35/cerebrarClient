@@ -2,19 +2,21 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+
 class Profile extends Component {
     constructor() {
         super();
         this.state = {
+            
 
-            // nickname: "",
-            // password: "",
-            // description: "",
-            // image: "",
-            // myThoughts: "",
-            // favourites:"",
         }
+
+
+
+
     }
+
+
 
         componentDidMount(){
             axios
@@ -35,16 +37,18 @@ class Profile extends Component {
 
     render() {
         console.log(this.state)
+        const {user} = this.props
+        console.log("aqui", user)
         return (
+
+       
             <div>
 
-                <h3>Información del usuario</h3>
-                <div>{this.state.nickname}</div>
-                <div>{this.state.image}</div>
-                
+                <img  className="profile-img" src={this.state.image} alt=""/>
+                <h3>{this.state.nickname}</h3>
+                <h3>{this.state.myThougts}</h3>
 
-                
-                
+ 
             </div>
         )
     }

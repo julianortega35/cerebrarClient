@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-function Info() {
-  return (
-    <div> 
-      <h1>FAQ</h1>
-    </div>
-  )
+
+class Info extends Component {
+  state
+
+  render() {
+    return (
+      <div>
+        <h1>hola mundo</h1>
+      </div>
+    )
+  }
 }
 
 export default Info;

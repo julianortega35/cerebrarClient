@@ -16,6 +16,7 @@ import ThoughtDetails from "./components/ThoughtDetails"
 import Profile from "./components/Profile"
 
 
+
 class App extends Component {
   render() {
     return (
@@ -23,14 +24,11 @@ class App extends Component {
 
       <AuthProvider>  
         <Navbar />
-      
-
-  
-
+     
   
         <Switch>
         <AnonRoute path="/signup" component={Signup} />
-      <AnonRoute path="/login" component={Login} />	
+         <AnonRoute path="/login" component={Login} />	
         <PrivateRoute exact path="/thoughtslist" component={ThoughtsList} />
         <PrivateRoute exact path="/add" component={NewThought} />
         <PrivateRoute exact path="/edit/:id" component={EditThought} />

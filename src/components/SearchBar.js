@@ -17,7 +17,7 @@ class SearchBar extends Component {
 
     render() {
         return (
-            <div><p>Búsqueda por categoría</p>
+            <div><p>Buscar:</p>
                 <input type="text" name="search" value={this.state.search} onChange={this.handleChange} />
             </div>
         )

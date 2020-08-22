@@ -51,19 +51,29 @@ renderEditForm = () => {
 
   //DELETE THOUGHT
 
-
   deleteThought = () => {
     const { params } = this.props.match;
     axios
-      .delete(`${process.env.REACT_APP_API_URI}/thoughts/thoughts/${params.id}`)
+      .delete(`${process.env.REACT_APP_API_URI}/thoughts/${params.id}`)
       .then(() => {
-        this.props.history.push("/thoughts/thoughts");
+        this.props.history.push("/thoughts");
       })
       .catch((err) => {
         console.log(err);
       });
   };
 
+
+    // deleteThought = (thoughtId) => {
+  //   axios
+  //     .delete(`${process.env.REACT_APP_API_URI}/thoughts/${thoughtId}`)
+  //     .then(() => {
+  //       this.getAllThoughts();
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
   
 
     render() {
@@ -71,18 +81,19 @@ renderEditForm = () => {
         return (
             <div>
               <h2>Detalles de una Pensamiento</h2>
-        <h4>Pensamiento automático: {this.state.automaticThought}</h4>
-        <p>Intesidad: {this.state.intensity}</p>
-        <p> Pensamiento alternativo: {this.state.alternativeThought}</p>
-        <p>Tarea compensatoria: {this.state.task}</p>
-        <p>Categoría: {this.state.category}</p>
-         {/* To go back we can use react-router-dom method `history.goBack()` available on `props` object */}
+              <h4>Pensamiento automático: {this.state.automaticThought}</h4>
+              <p>Intesidad: {this.state.intensity}</p>
+              <p> Pensamiento alternativo: {this.state.alternativeThought}</p>
+              <p>Tarea compensatoria: {this.state.task}</p>
+              <p>Categoría: {this.state.category}</p>
+              
+              {/* To go back we can use react-router-dom method `history.goBack()` available on `props` object */}
          
          
          <div>{this.renderEditForm()} </div>
 
          <Link to="/thoughtslist">
-         <button>Volver al listado de pensamientos</button>
+         <button>Ir al listado de pensamientos</button>
          </Link>
            
 

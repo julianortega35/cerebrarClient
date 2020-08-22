@@ -62,8 +62,7 @@ class EditThought extends Component {
           category
           }, {withCredentials: true})
         .then(()=>{
-            // this.props.getTheThought();
-              // after submitting the form, redirect to '/projects'
+          
               this.props.history.push("/thoughtslist");
         })
         .catch((error) => console.log (error));
@@ -76,39 +75,6 @@ class EditThought extends Component {
     getSingleThought = () => {
      
 }
-
-
-
-  //   handleChangeautomaticThought = event => {
-  //     this.setState({
-  //       automaticThought: event.target.value
-  //     });
-  // };
-
-
-//   handleChangeintensity = event => {
-//     this.setState({
-//       intensity: event.target.value
-//     });
-//   };
-
-//   handleChangealternativeThought = event => {
-//     this.setState({
-//       alternativeThought: event.target.value
-//     });
-// };
-
-//   handleChangetask = event => {
-//     this.setState({
-//       task: event.target.value
-//     });
-//   };
-
-//   handleChangecategory = event => {
-//     this.setState({
-//       category: event.target.value
-//     });
-//   };
 
 
 handleChange = event => {
