@@ -98,7 +98,7 @@ renderEditForm = () => {
            
 
          <Link to="/add">
-        <button className="myButton"> Agregar un nuevo pensamiento</button>
+        <button className="myButton"> Crear un pensaiento</button>
         </Link>
         
          <Link to={`/edit/${params.id}`}>

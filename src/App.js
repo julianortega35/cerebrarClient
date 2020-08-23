@@ -5,6 +5,7 @@ import { Switch, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import Info from "./pages/Info";
 import Private from "./pages/Private";
 import AuthProvider from "./lib/AuthProvider";
 import AnonRoute from "./components/AnonRoute";
@@ -14,6 +15,7 @@ import NewThought from "./components/NewThought"
 import EditThought from "./components/EditThought"
 import ThoughtDetails from "./components/ThoughtDetails"
 import Profile from "./components/Profile"
+import "bootstrap/dist/css/bootstrap.min.css";
 
 
 
@@ -24,11 +26,14 @@ class App extends Component {
 
       <AuthProvider>  
         <Navbar />
+        {/* <Info /> */}
+     
      
   
         <Switch>
         <AnonRoute path="/signup" component={Signup} />
          <AnonRoute path="/login" component={Login} />	
+         <PrivateRoute path="/info" component={Info} />	
         <PrivateRoute exact path="/thoughtslist" component={ThoughtsList} />
         <PrivateRoute exact path="/add" component={NewThought} />
         <PrivateRoute exact path="/edit/:id" component={EditThought} />

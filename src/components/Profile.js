@@ -7,16 +7,10 @@ class Profile extends Component {
     constructor() {
         super();
         this.state = {
-            
-
+        
         }
 
-
-
-
     }
-
-
 
         componentDidMount(){
             axios

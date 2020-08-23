@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import {Link} from "react-router-dom";
 import SearchBar from "./SearchBar";
+
 // import SearchBar from "./components/SearchBar"
 
 
@@ -33,9 +34,9 @@ class ThoughtsList extends Component {
     // el array y de los pensamientos - this.state.listOfThoughts
     const thoughtsCopy = [...this.state.listOfThoughts];
     const filteredThoughts = thoughtsCopy.filter((thoughtObj) =>{
-      const automaticThought = thoughtObj.automaticThought.toLowerCase();
+      const category= thoughtObj.category.toLowerCase();
 
-      if (automaticThought.includes(lowerSearchString)){
+      if (category.includes(lowerSearchString)){
         return true
       }
       else{
@@ -60,30 +61,38 @@ componentDidMount(){
 render() {
     return (
       <div>
+          
+
+
+      <div className="listThoughts-positions">
+      <h2>Listado de pensamientos</h2>
          <SearchBar filterThougts={this.filterThougts} />
         <div>
           {this.state.thoughtsToShow.map(thoughts => {
             return (
               <div key={thoughts._id}>
+                <div className="thoughts-position" >
                 <Link to={`/details/${thoughts._id}`}>
-                <img className="brain-2-size" src="/images/brain-2.png" alt="logo"/>
+                <img className="brain-2-size" src="/images/cerebro2.png" alt="logo"/>
                 <h3>{thoughts.automaticThought}</h3>
                 </Link>
+                </div>
                 
                
               </div>
             );
           })}
+
+          <Link to="/add">
+        <button>
+          Agregar un pensamiento
+        </button>
+        </Link>
         
-          {/* <AddProject getData={() => this.getAllProjects()} /> <== !!! */}
+          </div>
         </div>
       
-        <Link to="/add">
-        <button></button>
-
-       
         
-        </Link>
       </div>
     );
   }
