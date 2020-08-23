@@ -8,14 +8,23 @@ class Navbar extends Component {
 
     const { user, logout, isLoggedin } = this.props;	
     return (
+
+      
       <nav className="navbar">
-            <Link to={'/'} id='home-btn'>
-          <h4>Home</h4>
+      
+        <Link to={'/profile'} id='home-btn'>
+          <p>Perfil</p>
+        </Link>
+        <Link to={'/thoughtslist'} id='home-btn'>
+          <p>Pensamientos</p>
+        </Link>
+        <Link to={'/info'} id='home-btn'>
+          <p>Info</p>
         </Link>
         {
           isLoggedin ? 
           (<>
-            <p className="navbar-user">{user.nickname}</p>	
+            <p className="navbar-user">  {user.nickname}</p>	
             <button className="navbar-button" onClick={logout}>Cerrar sesión</button>	
           </>) 
          : 

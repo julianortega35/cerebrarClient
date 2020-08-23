@@ -5,6 +5,7 @@ import { Switch, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import Home from "./pages/Home";
 import Info from "./pages/Info";
 import Private from "./pages/Private";
 import AuthProvider from "./lib/AuthProvider";
@@ -19,6 +20,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 
 
+
 class App extends Component {
   render() {
     return (
@@ -26,6 +28,8 @@ class App extends Component {
 
       <AuthProvider>  
         <Navbar />
+        <Home />
+
         {/* <Info /> */}
      
      

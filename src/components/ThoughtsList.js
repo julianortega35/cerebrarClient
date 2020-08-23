@@ -64,9 +64,21 @@ render() {
           
 
 
-      <div className="listThoughts-positions">
+      <div className="title-style">
+      <div>
       <h2>Listado de pensamientos</h2>
+      </div>
+
+      <Link to="/add">
+        <button className="myButton">
+          Nuevo pensamiento
+        </button>
+        </Link>
+
+        <div>
          <SearchBar filterThougts={this.filterThougts} />
+         </div>
+
         <div>
           {this.state.thoughtsToShow.map(thoughts => {
             return (
@@ -83,11 +95,6 @@ render() {
             );
           })}
 
-          <Link to="/add">
-        <button>
-          Agregar un pensamiento
-        </button>
-        </Link>
         
           </div>
         </div>

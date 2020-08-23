@@ -8,11 +8,11 @@ class Info extends Component {
   render() {
     return (
       <div>
-          <h1> Estrategias para regular pensamientos automáticos negativos</h1>
+          <h4> Estrategias para regular pensamientos automáticos negativos</h4>
 
         
        
-        <h2> Consejos</h2>
+        <h5> Consejos</h5>
         <div className="video-size">
         <div className="video-position">
           <ReactPlayer width={200} height={200}
@@ -27,7 +27,7 @@ class Info extends Component {
       </div>
       </div>
        
-        <h2> Meditaciones guiadas</h2>
+        <h5> Meditaciones guiadas</h5>
         <div className="video-size">
      
         <div className="video-position">

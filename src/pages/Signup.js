@@ -22,6 +22,10 @@ class Signup extends Component {
     const { nickname, password } = this.state;
     return (
       <div>
+
+      
+
+       
         <h1>Crear cuenta</h1>
 
         <form onSubmit={this.handleFormSubmit}>
@@ -35,8 +39,8 @@ class Signup extends Component {
           <input type="submit" value="Crear" />
         </form>
         
-        <p>¿Ya tienes una cuenta?</p>
-        <Link to={"/login"}> Ingresar</Link>
+      
+ 
       </div>
     );
   }

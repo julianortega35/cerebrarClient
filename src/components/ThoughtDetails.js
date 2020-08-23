@@ -92,25 +92,32 @@ renderEditForm = () => {
          
          <div>{this.renderEditForm()} </div>
 
-         <Link to="/thoughtslist">
-         <button>Ir al listado de pensamientos</button>
-         </Link>
-           
-
-         <Link to="/add">
-        <button className="myButton"> Crear un pensaiento</button>
-        </Link>
-        
          <Link to={`/edit/${params.id}`}>
          <button >
          Editar un pensamiento</button>
         </Link>
 
+
+        <Link to="/add">
+        <button className="myButton"> Nuevo pensamiento</button>
+        </Link>
+
+        <button onClick={() => this.deleteThought()}>Eliminar Pensamiento</button>
+
+
+
+         <Link to="/thoughtslist">
+         <button> Listado de pensamientos</button>
+         </Link>
+           
+
+        
+         
        
 
        
 
-         <button onClick={() => this.deleteThought()}>Eliminar Pensamiento</button>
+         
 
             </div>
         )

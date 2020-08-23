@@ -101,12 +101,12 @@ class NewThought extends Component {
            />
             
 
-            <input type="submit" value="Agregar"/>
+            <input type="submit" value="Crear"/>
 
          
            </form>
            <Link to="/thoughtslist">
-         <button>Volver al listado de pensamientos</button>
+         <button>Listado de pensamientos</button>
          </Link>
            
            </div>
