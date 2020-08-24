@@ -71,11 +71,6 @@ class EditThought extends Component {
 
 
 
-   
-
-    getSingleThought = () => {
-     
-}
 
 
 handleChange = event => {
@@ -125,14 +120,22 @@ render() {
             value={this.state.task}
             onChange={this.handleChange}
             />
-          
-            <label>Categoria:</label>
-           <input
-            type="text"
-            name="category"
-            value={this.state.category}
-            onChange={this.handleChange}
-           />
+                  
+       <label>Categoria:</label>
+
+        <select name="category" onChange={this.handleChange}>
+          <option value="Todas">Todas las categorías</option>
+          <option value="Dinero">Dinero</option>
+          <option value="Familia">Familia</option>
+          <option value="Futuro">Futuro</option>
+          <option value="Pareja">Pareja</option>
+          <option value="Salud">Salud</option>
+          <option value="Trabajo">Trabajo</option>
+          <option value="Otra">Otra</option>
+
+        </select>
+
+
           <input type="submit" value="Editar" />
         </form>
 

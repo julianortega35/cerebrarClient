@@ -14,11 +14,13 @@ class Navbar extends Component {
         <Link to={'/profile'} id='home-btn'>
           <p>Perfil</p>
         </Link>
-        <Link to={'/thoughtslist'} id='home-btn'>
-          <p>Pensamientos</p>
-        </Link>
+      
         <Link to={'/info'} id='home-btn'>
           <p>Info</p>
+        </Link>
+
+        <Link to={'/thoughtslist'} id='home-btn'>
+          <p>Pensamientos</p>
         </Link>
         {
           isLoggedin ? 

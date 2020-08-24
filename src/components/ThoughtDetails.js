@@ -2,7 +2,6 @@
 
 import React, { Component } from 'react';
 import axios from 'axios';
-import EditThought from "./EditThought";
 import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";	
 
@@ -56,27 +55,13 @@ import { withAuth } from "../lib/AuthProvider";
 
 
 componentDidMount(){
-  console.log("este es el props", this.props.user._id)
-  console.log("este es el current user", this.state.userId)
+  
   this.getSingleThought()
 
     // this.getSingleThought();
 }
 
-renderEditForm = () => {
-    if (!this.state.title) {
-      this.getSingleThought();
-    } else {
-      //{...props} => so we can have 'this.props.history' in Edit.js
-      return (
-        <EditThought
-          theThought={this.state}
-          getTheThought={this.getSingleThought}
-          {...this.props}
-        />
-      );
-    }
-  };
+
 
   //DELETE THOUGHT
 
@@ -94,16 +79,6 @@ renderEditForm = () => {
   };
 
 
-    // deleteThought = (thoughtId) => {
-  //   axios
-  //     .delete(`${process.env.REACT_APP_API_URI}/thoughts/${thoughtId}`)
-  //     .then(() => {
-  //       this.getAllThoughts();
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
   
 
 
@@ -128,7 +103,7 @@ renderEditForm = () => {
         
         <div>
           
-          <div>{this.renderEditForm()} </div>
+        
 
             <Link to={`/edit/${params.id}`}>
             <button >
@@ -140,26 +115,6 @@ renderEditForm = () => {
             </div>
             
         </div> ) : null } 
-
-
-
-
-              {/* <div>
-          
-          <div>{this.renderEditForm()} </div>
-
-            <Link to={`/edit/${params.id}`}>
-            <button >
-            Editar un pensamiento</button>
-            </Link> 
-            
-            <div>
-            <button onClick={() => this.deleteThought()}>Eliminar Pensamiento</button>
-            </div>
-            
-        </div>  */}
-
-       
     
         <Link to="/add">
         <button className="myButton"> Nuevo pensamiento</button>

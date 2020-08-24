@@ -53,39 +53,13 @@ class NewThought extends Component {
        this.setState({[name]: value});
    };
 
+ 
+
    render(){
        return(
            <div>
            <form onSubmit={this.handleFormSubmit}>
            <h1>Agregar un nuevo pensamiento</h1>
-{/* 
-           <Form>
-  <Form.Group controlId="formBasicEmail">
-    <Form.Label>Pensamiento Automático</Form.Label>
-    <Form.Control type="Pensamiento Automático" placeholder="Ingrese el pensamiento automático negativo" />
-   
-  </Form.Group>
-
-  <Form.Group controlId="formBasicPassword">
-    <Form.Label>Password</Form.Label>
-    <Form.Control type="password" placeholder="Password" />
-  </Form.Group>
-
-  <Form.Group controlId="formBasicCheckbox">
-    <Form.Check type="checkbox" label="Check me out" />
-  </Form.Group>
-
-  <Button variant="primary" type="submit">
-    Crear pensamiento
-  </Button>
-</Form> 
- */}
-
-
-
-
-
-
 
 
            <label>Pensamiento Automático:</label>
@@ -119,15 +93,34 @@ class NewThought extends Component {
            value={this.state.task}
             onChange={e => this.handleChange(e)}
             />
-            
-
+                        
             <label>Categoria:</label>
+
+            <select name="category" onChange={this.handleChange}>
+            <option value="Todas">Todas las categorías</option>
+            <option value="Dinero">Dinero</option>
+            <option value="Familia">Familia</option>
+            <option value="Futuro">Futuro</option>
+            <option value="Pareja">Pareja</option>
+            <option value="Salud">Salud</option>
+            <option value="Trabajo">Trabajo</option>
+            <option value="Otra">Otra</option>
+
+            </select>
+            
+                  
+                 
+
+
+
+
+            {/* <label>Categoria:</label>
            <input
             type="text"
             name="category"
             value={this.state.category}
             onChange={e => this.handleChange(e)}
-           />
+           /> */}
             
             <input type="submit" value="Crear"/>
 
