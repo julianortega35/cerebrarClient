@@ -8,7 +8,6 @@ class Navbar extends Component {
 
     const { user, logout, isLoggedin } = this.props;	
     return (
-
       
       <nav className="navbar">
       

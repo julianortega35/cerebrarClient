@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import { Switch, Route } from "react-router-dom";
+import { Switch } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Signup from "./pages/Signup";
@@ -42,7 +42,7 @@ class App extends Component {
         <PrivateRoute exact path="/add" component={NewThought} />
         <PrivateRoute exact path="/edit/:id" component={EditThought} />
         <PrivateRoute exact path="/details/:id" component={ThoughtDetails} />
-        <PrivateRoute path="/profile" component={Profile} />
+        <PrivateRoute exact path="/profile" component={Profile} />
         <PrivateRoute path="/private" component={Private} />{/* <Route> to <PrivateRoute>*/}
         </Switch>
         </AuthProvider> 
