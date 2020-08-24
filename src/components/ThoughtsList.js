@@ -35,6 +35,9 @@ class ThoughtsList extends Component {
     const thoughtsCopy = [...this.state.listOfThoughts];
     const filteredThoughts = thoughtsCopy.filter((thoughtObj) =>{
       const category= thoughtObj.category.toLowerCase();
+  
+      console.log(this.state.category)
+      
 
       if (category.includes(lowerSearchString)){
         return true
@@ -58,6 +61,15 @@ componentDidMount(){
 }
 
 
+
+handleChange = (e) => {
+  const updatedValue = e.target.value
+  this.filterThougts(updatedValue)
+
+}
+
+
+
 render() {
     return (
       <div>
@@ -75,9 +87,12 @@ render() {
         </button>
         </Link>
 
+
         <div>
-         <SearchBar filterThougts={this.filterThougts} />
+         <SearchBar filterThougts={this.filterThougts} selectValue={this.state.category}  />
+         
          </div>
+
 
         <div>
           {this.state.thoughtsToShow.map(thoughts => {
@@ -90,7 +105,6 @@ render() {
                 </Link>
                 </div>
                 
-               
               </div>
             );
           })}

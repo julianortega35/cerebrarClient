@@ -42,6 +42,13 @@ class Profile extends Component {
             <div>
 
             <div>
+                <h3>Perfil de {nickname}</h3>
+                <img  className="profile-img" src={image} alt=""/>
+          
+             
+
+               <h4> Mis Pensamientos</h4>
+            <div>
             {myThoughts? (myThoughts.map(thought => {
               return (
                 <div key={thought._id}>
@@ -54,11 +61,6 @@ class Profile extends Component {
 
             )})) : null}
          </div>
-            <div>
-
-                <img  className="profile-img" src={image} alt=""/>
-                <h3>{nickname}</h3>
-                {/* <h3>{myThoughts}</h3> */}
 
 
 
@@ -67,6 +69,8 @@ class Profile extends Component {
           Nuevo pensamiento
         </button>
         </Link>
+
+            
 
 
  

@@ -33,11 +33,12 @@ class EditThought extends Component {
              task: theThought.task,
              category: theThought.category,
             });
+       
       })
       .catch((err)=>{
           console.log(err)
       })
-        // this.getSingleThought();
+
     }
 
 
@@ -63,7 +64,7 @@ class EditThought extends Component {
           }, {withCredentials: true})
         .then(()=>{
           
-              this.props.history.push("/thoughtslist");
+          return this.props.history.push(`/details/${params.id}`)
         })
         .catch((error) => console.log (error));
     };

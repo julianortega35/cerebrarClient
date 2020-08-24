@@ -2,14 +2,12 @@
 import React, { Component } from 'react'
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
 
 
 
 
-
-//Comenzaremos construyendo el componente <AddProject />. Este componente mostrará el formulario y se encargará de su envío. 
-// Al manejar el envío del formulario, nos referimos al uso de axios para llegar a una ruta back-end y entregar algunos datos enviados desde el frontend 
-//(o simplemente podemos decir que los envió el usuario después de completar el formulario y enviarlo).
 
 
 class NewThought extends Component {
@@ -24,7 +22,7 @@ class NewThought extends Component {
     }
 }
 
-   handleFormSubmit = event => {
+ handleFormSubmit = async event =>  {
        event.preventDefault();
        console.log(this.state)
         const automaticThought = this.state.automaticThought;
@@ -33,7 +31,7 @@ class NewThought extends Component {
         const task = this.state.task;
         const category = this.state.category;
 
-       axios
+      await axios
         .post(`${process.env.REACT_APP_API_URI}/thoughts/add`,  { automaticThought, intensity, alternativeThought, task, category }, {withCredentials: true})
         .then(()=>{
             // this.props.getTheThought();
@@ -46,6 +44,7 @@ class NewThought extends Component {
             });
         })
         .catch(error => console.log(error));
+        return this.props.history.push("/thoughtslist")
    }; 
 
    
@@ -59,6 +58,36 @@ class NewThought extends Component {
            <div>
            <form onSubmit={this.handleFormSubmit}>
            <h1>Agregar un nuevo pensamiento</h1>
+{/* 
+           <Form>
+  <Form.Group controlId="formBasicEmail">
+    <Form.Label>Pensamiento Automático</Form.Label>
+    <Form.Control type="Pensamiento Automático" placeholder="Ingrese el pensamiento automático negativo" />
+   
+  </Form.Group>
+
+  <Form.Group controlId="formBasicPassword">
+    <Form.Label>Password</Form.Label>
+    <Form.Control type="password" placeholder="Password" />
+  </Form.Group>
+
+  <Form.Group controlId="formBasicCheckbox">
+    <Form.Check type="checkbox" label="Check me out" />
+  </Form.Group>
+
+  <Button variant="primary" type="submit">
+    Crear pensamiento
+  </Button>
+</Form> 
+ */}
+
+
+
+
+
+
+
+
            <label>Pensamiento Automático:</label>
            <textarea 
            name="automaticThought"
@@ -100,15 +129,12 @@ class NewThought extends Component {
             onChange={e => this.handleChange(e)}
            />
             
-
             <input type="submit" value="Crear"/>
 
-         
-           </form>
-           <Link to="/thoughtslist">
-         <button>Listado de pensamientos</button>
-         </Link>
            
+           
+           </form>
+      
            </div>
            
        );

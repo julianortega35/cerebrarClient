@@ -12,10 +12,21 @@ import { withAuth } from "../lib/AuthProvider";
  class ThoughtDetails extends Component {
     constructor (props){
         super(props);
-        this.state = {};
+        this.state = {
+          automaticThought: "" ,
+          intensity: "",
+          alternativeThought:"",
+          task: "",
+          category: "",
+          userId: "",
+          suggestedAlternativeThought: [],
+
+        };
     }
 
-    componentDidMount(){
+  
+
+    getSingleThought = () => {
       const {params} = this.props.match;
       axios
       .get(`${process.env.REACT_APP_API_URI}/thoughts/${params.id}`, {withCredentials: true})
@@ -23,16 +34,33 @@ import { withAuth } from "../lib/AuthProvider";
       .then((responseFromApi) =>{
           const theThought = responseFromApi.data;
           console.log(responseFromApi.data)
-          this.setState(theThought);
+          this.setState({
+            automaticThought: theThought.automaticThought,
+            intensity: theThought.intensity,
+            alternativeThought: theThought.alternativeThought,
+            task: theThought.task,
+            category: theThought.category,
+            userId: theThought.userId,
+            suggestedAlternativeThought: theThought.suggestedAlternativeThought,
+          }
+            
+            );
+       
       })
       .catch((err)=>{
           console.log(err)
       })
-        // this.getSingleThought();
-    }
+  
+    
+}
 
-    getSingleThought = () => {
-     
+
+componentDidMount(){
+  console.log("este es el props", this.props.user._id)
+  console.log("este es el current user", this.state.userId)
+  this.getSingleThought()
+
+    // this.getSingleThought();
 }
 
 renderEditForm = () => {
@@ -53,16 +81,16 @@ renderEditForm = () => {
   //DELETE THOUGHT
 
   deleteThought = () => {
-    console.log ("holaaaaaa")
     const { params } = this.props.match;
     axios
       .delete(`${process.env.REACT_APP_API_URI}/thoughts/${params.id}`, {withCredentials: true})
       .then(() => {
-        this.props.history.push("/thoughts");
       })
       .catch((err) => {
         console.log(err);
       });
+      return this.props.history.push("/thoughtslist")
+     
   };
 
 
@@ -78,25 +106,26 @@ renderEditForm = () => {
   // };
   
 
+
     render() {
       const {params} = this.props.match;
-      console.log(this.state)
+      
+    
         return (
             <div>
               <h2>Detalles de una Pensamiento</h2>
+            
               <h6>Pensamiento automático: {this.state.automaticThought}</h6>
               <p>Intesidad: {this.state.intensity}</p>
               <p> Pensamiento alternativo: {this.state.alternativeThought}</p>
               <p>Tarea compensatoria: {this.state.task}</p>
               <p>Categoría: {this.state.category}</p>
-              {this.state.userId ? (<p>Apodo: {this.state.userId.nickname}</p>) : null}
-            
+              {this.state.userId ? (<p>Creado por: {this.state.userId.nickname}</p>) : null}
               
-              {/* To go back we can use react-router-dom method `history.goBack()` available on `props` object */}
-         
-         
-       
-          {this.props.user === this.state.userId? (
+            
+            
+        {  this.props.user._id === this.state.userId._id ? (
+        
         <div>
           
           <div>{this.renderEditForm()} </div>
@@ -110,13 +139,28 @@ renderEditForm = () => {
             <button onClick={() => this.deleteThought()}>Eliminar Pensamiento</button>
             </div>
             
-        </div> ) : null }
+        </div> ) : null } 
 
 
 
 
+              {/* <div>
+          
+          <div>{this.renderEditForm()} </div>
 
+            <Link to={`/edit/${params.id}`}>
+            <button >
+            Editar un pensamiento</button>
+            </Link> 
+            
+            <div>
+            <button onClick={() => this.deleteThought()}>Eliminar Pensamiento</button>
+            </div>
+            
+        </div>  */}
 
+       
+    
         <Link to="/add">
         <button className="myButton"> Nuevo pensamiento</button>
         </Link>

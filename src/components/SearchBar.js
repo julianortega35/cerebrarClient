@@ -9,8 +9,6 @@ class SearchBar extends Component {
 
     handleChange = (e) => {
         const updatedValue = e.target.value
-        this.setState({search: updatedValue })
-
         this.props.filterThougts(updatedValue)
 
     }
@@ -19,7 +17,24 @@ class SearchBar extends Component {
         return (
             <div className="searchStyle">
             <p>Búsqueda por categoria:</p>
-                <input type="text" name="search" value={this.state.search} onChange={this.handleChange} />
+                
+
+         <div>
+                <select name="category" onChange={this.handleChange}>
+                  <option value="Todas">Todas las categorías</option>
+                  <option value="Dinero">Dinero</option>
+                  <option value="Familia">Familia</option>
+                  <option value="Futuro">Futuro</option>
+                  <option value="Pareja">Pareja</option>
+                  <option value="Salud">Salud</option>
+                  <option value="Trabajo">Trabajo</option>
+                  <option value="Otra">Otra</option>
+
+                </select>
+                </div>
+
+
+
             </div>
         )
     }
