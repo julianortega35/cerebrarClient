@@ -15,7 +15,7 @@ class Home extends Component {
 
 
 
-     <div className="home-btn">
+     <div className="home-style">
   
      <img className="home-logo" src="/images/fondo/home2.png" alt=""/>
 
@@ -27,17 +27,19 @@ class Home extends Component {
    
       <br/>
         <br/>
-        <Button variant="light" type="submit" value="Crear"  >
-      <Link to="/login">Ingresar</Link> 
+     
+        <Button  variant="light" type="submit" value="Crear"  >
+      <Link className="home-buttom" to="/login">Ingresar</Link> 
       </Button>
+      
       <br/>
       <br/>
       
-
+  
       <Button variant="light" type="submit" value="Crear"  >
-      <Link to="/signup">Crear una cuenta</Link> 
-      </Button>
-
+      <Link className="home-buttom" to="/signup">Crear una cuenta</Link> 
+      </Button> 
+  
       </div>
 
       

@@ -89,8 +89,10 @@ componentDidMount(){
     
         return (
             <div >
-             <div className="form-style">
+
               <h2>Detalle de pensamiento</h2>
+             <div className="form-style">
+           
             
               <h6>Pensamiento automático: {this.state.automaticThought}</h6>
               <p>Intesidad: {this.state.intensity}</p>

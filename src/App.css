@@ -56,7 +56,7 @@ button.navbar-button {
 
 /* HOME */
 
-.home-btn{
+.home-style{
   
 
   display: flex;
@@ -69,6 +69,14 @@ button.navbar-button {
 
 
 }
+
+.home-buttom{
+  text-decoration: none;
+  color: black;
+
+}
+
+
 
 
 .home-title{
@@ -96,15 +104,24 @@ button.navbar-button {
 	align-items: center;
   align-content: center;
 
-
-
 }
+
+
 
 
 .login-style{
   
-  margin-top: 150px;
+  margin-top: 60px;
   
+}
+
+.login-buttom{
+  display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+  align-content: center;
 }
 
 
@@ -121,7 +138,8 @@ button.navbar-button {
 	justify-content: center;
 	align-items: center;
   align-content: center;
-  margin-top: 150px;
+  margin-top: 60px;
+ 
   
 
 }

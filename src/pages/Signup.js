@@ -52,9 +52,11 @@ class Signup extends Component {
       <Form.Control type="password" placeholder="Contraseña" name="password" value={password} onChange={this.handleChange}  />
       </Form.Group>
 
+      <div className="login-buttom" >
       <Button variant="light" type="submit" value="Crear"  >
       Crear
       </Button>
+      </div>
 
 </form>
  
