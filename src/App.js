@@ -3,6 +3,7 @@ import "./App.css";
 import { Switch, Route} from "react-router-dom";
 
 import Navbar from "./components/Navbar";
+import Modal from "./components/Modal";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Home from "./pages/Home";

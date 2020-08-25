@@ -108,13 +108,13 @@ componentDidMount(){
         
 
             <Link to={`/edit/${params.id}`}>
-            <Button variant="primary"  input type="submit" value="Editar">
+            <Button className="myButton"  input type="submit" value="Editar">
            Modificar
            </Button>
             </Link> 
             
             <div>
-            <Button variant="primary"  input type="submit" value="Eliminar" onClick={() => this.deleteThought()}>
+            <Button className="myButton"  input type="submit" value="Eliminar" onClick={() => this.deleteThought()}>
              Eliminar
            </Button>
             </div>

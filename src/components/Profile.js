@@ -4,6 +4,7 @@ import axios from "axios";
 import {Link} from "react-router-dom";
 
 
+
 class Profile extends Component {
     constructor() {
         super();
@@ -40,6 +41,7 @@ class Profile extends Component {
         
         return (
             <div>
+       
 
             <div>
                  <div className="profile-style">
@@ -60,9 +62,9 @@ class Profile extends Component {
               return (
                 <div key={thought._id}>
                     <div className="listThoughts-positions thoughts-position">
-                  <Link to={`/details/${thought._id}`}>
+                  <Link className="links-style" to={`/details/${thought._id}`}>
            
-                  <h3>{thought.automaticThought}</h3>
+                  <p>{thought.automaticThought}</p>
                   </Link>
                   </div>
                   </div>

@@ -1,51 +1,132 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+
 * {
   margin: 0;
   padding: 0;
+  
 }
 
-.App {
-  padding: 20px;;
-}
+
 
 .home {
-  background-image: url("/images/fondo/fondo8.jpeg"); /* The image used */
-  background-color: #cccccc; /* Used if the image is unavailable */
-  height: 800px; /* You must set a specified height */
+  background-image: url("/images/fondo/fondo-1.jpeg"); /* The image used */
+  
+  height: 650px; /* You must set a specified height */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
 }
 
-.navbar-style{
+/* .navbar-style{
   display: flex;
   padding: 10px;
   background: #ff8080; 
 
 
 
+}  */
+
+/* NAVBAR */
+
+.nav-links-style{
+text-decoration: none;
+color: black;
 }
 
 nav.navbar { 
   display: flex;
   padding: 10px;
-  background: #ff8080; 
+  background: #fcdede; 
 }
 
 
 button.navbar-button {
   padding: 5px 20px;
-  width: 100pxpx;
+  width: 100px;
   border-radius: 3px;
   margin: 0 10px;
+  
 }
 
 
 
-.brain-2-size{
-width: 50px;
-height: 50px;
+
+/* HOME */
+
+.home-btn{
+  
+
+  display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+  align-content: center;
+  margin-top: 70px;
+
 
 }
+
+
+.home-title{
+  font-family: 'Dancing Script', cursive;
+  font-weight:bold;
+  color: rgba(240, 61, 61, 0.863);
+  margin-bottom: 50px;
+}
+
+.home-logo{
+  width: 150px;
+  height: 150px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+
+
+/* LOGIN */
+.login-position{
+  display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+  align-content: center;
+
+
+
+}
+
+
+.login-style{
+  
+  margin-top: 150px;
+  
+}
+
+
+
+
+/* SIGNUP */
+
+.signup-style{
+  
+  
+  display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+  align-content: center;
+  margin-top: 150px;
+  
+
+}
+
+
 
 /* PROFILE */
 
@@ -72,9 +153,15 @@ height: 50px;
     justify-content: center; 
     padding-bottom: 30px;
     
-   
-    
   }
+
+  .links-style{
+    text-decoration: none;
+    color: rgb(99, 67, 67);
+    font-size: 20px;
+    text-align: center;
+    
+    }
 
   /* INFO */
 
@@ -96,6 +183,13 @@ height: 50px;
 
  /* THOUGHTS LIST */
 
+
+.brain-2-size{
+  width: 40px;
+  height: 40px;
+  margin-bottom: 15px;
+  
+  }
 
   .listThoughts-positions{
     display: flex;
@@ -126,29 +220,32 @@ height: 50px;
 
 
     .myButton {
-      box-shadow: 0px 10px 14px -7px #3e7327;
-      background:linear-gradient(to bottom, #77b55a 5%, #72b352 100%);
-      background-color:#77b55a;
-      border-radius:4px;
-      border:1px solid #4b8f29;
+      box-shadow:inset 0px 1px 0px 0px #f5978e;
+      background:linear-gradient(to bottom, #fa776e 5%, #bd1c0d 100%);
+      background-color:#fa776e;
+      border-radius:6px;
+      border:1px solid #d02718;
       display:inline-block;
       cursor:pointer;
       color:#ffffff;
       font-family:Arial;
-      font-size:13px;
+      font-size:15px;
       font-weight:bold;
-      padding:6px 12px;
+      padding:6px 24px;
       text-decoration:none;
-      text-shadow:0px 1px 0px #5b8a3c;
-      margin: 20px 0;
+      text-shadow:0px 1px 0px #810e05;
+      margin: 10px 0;
+      
     }
     .myButton:hover {
-      background:linear-gradient(to bottom, #72b352 5%, #77b55a 100%);
-      background-color:#72b352;
+      background:linear-gradient(to bottom, #bd1c0d 5%, #fa776e 100%);
+      background-color:#bd1c0d;
     }
     .myButton:active {
       position:relative;
       top:1px;
+  
     }
+    
     
 

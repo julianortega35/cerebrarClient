@@ -1,5 +1,8 @@
 import React, { Component } from "react";
-import { withAuth } from "../lib/AuthProvider";	
+import { withAuth } from "../lib/AuthProvider";
+import { Helmet } from "react-helmet";
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
 
 
 class Login extends Component {
@@ -22,22 +25,45 @@ class Login extends Component {
     const { nickname, password } = this.state;
 
     return (
+      
+      <div className = "login-style">
+        <Helmet>
+          <body className="home" />
+        </Helmet> 
+
+<div className = "login-position">
+
+
+<img className="home-logo" src="/images/fondo/home2.png" alt=""/>
+
+<h1 className="home-title">CEREBRAR</h1>
 
 
 
-      <div>
-        <h1>Ingresar</h1>
+
+
+        <h3>Ingresar</h3>
 
         <form onSubmit={this.handleFormSubmit}>
-          
-          <label>Apodo:</label>
-          <input type="text" name="nickname" value={nickname} onChange={this.handleChange}/>
 
-          <label>Clave:</label>
-          <input type="password" name="password" value={password} onChange={this.handleChange} />
+      <Form.Group controlId="formBasicEmail">
+      
+        <Form.Control  type="text" placeholder="Apodo" name="nickname" value={nickname} onChange={this.handleChange}  />
+      </Form.Group>
 
-          <input type="submit" value="Ingresar" />
+      <Form.Group controlId="formBasicPassword">
+     
+        <Form.Control type="password" placeholder="Contraseña" name="password" value={password} onChange={this.handleChange}  />
+      </Form.Group>
+     
+      <Button variant="light" type="submit" value="Ingresar"  >
+      Ingresar
+      </Button>
+
         </form>
+
+
+        </div>
       </div>
     );
   }

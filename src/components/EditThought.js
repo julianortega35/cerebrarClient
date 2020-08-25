@@ -4,6 +4,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import Card from 'react-bootstrap/Card'
 
 class EditThought extends Component {
     constructor (props){
@@ -94,11 +95,13 @@ render() {
            <h1>Agregar un nuevo pensamiento</h1>
 
            <Form.Group>
+                <Form.Label>Pensamiento Automático</Form.Label>
                 <Form.Control size="lg" type="text" placeholder="Pensamiento Automático" name="automaticThought"
                 value={this.state.automaticThought}
                 onChange={e => this.handleChange(e)} />
-                <br />
+                <br /> 
 
+                <Form.Label>Intensidad</Form.Label>
                 <Form.Control
                     as="select"
                     className="my-1 mr-sm-2"
@@ -121,18 +124,20 @@ render() {
                 </Form.Control>
                <br/>
                 <br/>
+                <Form.Label>Pensamientos Alternativo</Form.Label>
                 <Form.Control size="lg" type="text" placeholder="Pensamientos Alternativo"   name="alternativeThought"
                 value={this.state.alternativeThought}
                  onChange={e => this.handleChange(e)} />
 
                 <br/>
+                <Form.Label>Tarea Compensatoria</Form.Label>
                 <Form.Control size="lg" type="text" placeholder="Tarea Compensatoria"   name="task"
                  value={this.state.task}
                 onChange={e => this.handleChange(e)} />
                 
 
                 <br/>
-
+                <Form.Label>Categoría</Form.Label>   
                 <Form.Control as="select"  value={this.state.category} name="category" onChange={this.handleChange}>
                 <option value="Todas las categorías">Todas las categorías</option>
                 <option value="Dinero">Dinero</option>
@@ -144,7 +149,7 @@ render() {
                 <option value="Otra">Otra</option>
                 </Form.Control>
                 <br/>
-                <Button variant="primary"  input type="submit" value="Editar">
+                <Button className="myButton" input type="submit" value="Editar">
                   Editar
                 </Button>
                

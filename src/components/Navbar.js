@@ -14,20 +14,25 @@ class Navbar extends Component {
       (<nav className="navbar">
 
 
-      
-       
-            <Link to="/profile">
+          
+           
+            <Link className="nav-links-style" to="/profile">
             Perfil
             </Link>
-       
-            <Link to="/thoughtslist">
+           
+
+
+         
+            <Link className="nav-links-style" to="/thoughtslist">
              Pensamientos
             </Link>
+          
 
-            <Link to="/info">
+       
+            <Link className="nav-links-style" to="/info">
              Info
             </Link>
-          
+        
 
              {/* <p className="navbar-user"> {user.nickname}</p>	  */}
             <img className="logout-img" src="/images/logout4.png" alt="" onClick={logout}/>

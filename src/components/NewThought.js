@@ -59,7 +59,7 @@ class NewThought extends Component {
        return(
            <div>
            <form onSubmit={this.handleFormSubmit}>
-           <h1>Agregar un nuevo pensamiento</h1>
+           <h1>Crear un nuevo pensamiento</h1>
 
            <Form.Group>
                 <Form.Control size="lg" type="text" placeholder="Pensamiento Automático" name="automaticThought"
@@ -112,7 +112,7 @@ class NewThought extends Component {
                 <option value="Otra">Otra</option>
                 </Form.Control>
                 <br/>
-                <Button variant="primary"  input type="submit" value="Crear">
+                <Button className="myButton"  input type="submit" value="Crear">
                   Crear
                 </Button>
                

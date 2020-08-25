@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 // import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import { withAuth } from "../lib/AuthProvider";	
-// import Form from 'react-bootstrap/Form'
-// import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
+
 
 class Signup extends Component {
   state = { nickname: "", password: "" };
@@ -23,45 +25,38 @@ class Signup extends Component {
   render() {
     const { nickname, password } = this.state;
     return (
-      <div>
+    
 
-{/* 
-<Form>
-  <Form.Group controlId="formBasicEmail">
-    <Form.Label>Apodo</Form.Label>
-    <Form.Control type="apodo" placeholder="Elija un apodo" />
-    <Form.Text className="text-muted">
-       We'll never share your email with anyone else.  
-    </Form.Text>
-  </Form.Group>
 
-  <Form.Group controlId="formBasicPassword">
-    <Form.Label>Clave</Form.Label>
-    <Form.Control type="clave" placeholder="clave" />
-  </Form.Group>
- 
-  <Button variant="primary" type="submit">
-    Ingresar
-  </Button>
-</Form>  */}
+      <div  className = "signup-style">
 
-       
+      <Helmet>
+      <body className="home" />
+    </Helmet> 
 
-   
-        <h1>Crear cuenta</h1>
+    <img className="home-logo" src="/images/fondo/home2.png" alt=""/>
 
-        <form onSubmit={this.handleFormSubmit}>
+    <h1 className="home-title">CEREBRAR</h1>
 
-          <label>Apodo:</label>
-          <input type="text" name="nickname" value={nickname} onChange={this.handleChange} />
+      <h3>Crear una cuenta</h3>
 
-          <label>Clave:</label>
-          <input type="password" name="password" value={password} onChange={this.handleChange} />
+      <form onSubmit={this.handleFormSubmit}>
 
-          <input type="submit" value="Crear" />
-        </form> 
-        
-      
+      <Form.Group controlId="formBasicEmail">
+
+      <Form.Control  type="text" placeholder="Apodo" name="nickname" value={nickname} onChange={this.handleChange}  />
+      </Form.Group>
+
+      <Form.Group controlId="formBasicPassword">
+
+      <Form.Control type="password" placeholder="Contraseña" name="password" value={password} onChange={this.handleChange}  />
+      </Form.Group>
+
+      <Button variant="light" type="submit" value="Crear"  >
+      Crear
+      </Button>
+
+</form>
  
       </div>
     );

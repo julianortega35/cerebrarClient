@@ -81,11 +81,6 @@ render() {
       <h2>Listado de pensamientos</h2>
       </div>
 
-      <Link to="/add">
-        <button className="myButton">
-          Nuevo pensamiento
-        </button>
-        </Link>
 
 
         <div>
@@ -97,11 +92,11 @@ render() {
         <div>
           {this.state.thoughtsToShow.map(thoughts => {
             return (
-              <div key={thoughts._id}>
+              <div  key={thoughts._id}>
                 <div className="thoughts-position" >
-                <Link to={`/details/${thoughts._id}`}>
+                <Link className="links-style" to={`/details/${thoughts._id}`}>
                 <img className="brain-2-size" src="/images/cerebro2.png" alt="logo"/>
-                <h3>{thoughts.automaticThought}</h3>
+                <p>{thoughts.automaticThought}</p>
                 </Link>
                 </div>
                 
@@ -111,6 +106,13 @@ render() {
 
         
           </div>
+
+
+      <Link to="/add">
+        <button className="myButton">
+          Nuevo pensamiento
+        </button>
+        </Link>
         </div>
       
         
