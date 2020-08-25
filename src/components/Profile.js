@@ -14,7 +14,7 @@ class Profile extends Component {
     }
 
         componentDidMount(){
-            console.log("holaaaaaa")
+       
             axios
             .get(`${process.env.REACT_APP_API_URI}/profile`, {withCredentials: true})
             .then((responseFromApi) =>{
@@ -34,41 +34,52 @@ class Profile extends Component {
 
     render() {
         console.log(this.state)
-        const {user} = this.props
+    
         const {nickname, image, myThoughts} = this.state
         
-        console.log("aqui", user)
+        
         return (
             <div>
 
             <div>
+                 <div className="profile-style">
                 <h3>Perfil de {nickname}</h3>
-                <img  className="profile-img" src={image} alt=""/>
-          
-             
+                </div>
 
+                <div className="profile-style">
+                <img  className="profile-img" src={image} alt=""/>
+                </div>
+
+                <div className="profile-style">
                <h4> Mis Pensamientos</h4>
-            <div>
+               </div>
+
+
+            <div >
             {myThoughts? (myThoughts.map(thought => {
               return (
                 <div key={thought._id}>
-    
+                    <div className="listThoughts-positions thoughts-position">
                   <Link to={`/details/${thought._id}`}>
            
                   <h3>{thought.automaticThought}</h3>
                   </Link>
+                  </div>
                   </div>
 
             )})) : null}
          </div>
 
 
-
-                <Link to="/add">
+        <div className="addButtonStyle">         
+       <Link to="/add">
         <button className="myButton">
           Nuevo pensamiento
         </button>
         </Link>
+
+        </div>
+
 
             
 

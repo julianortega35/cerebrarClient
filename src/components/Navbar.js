@@ -8,38 +8,32 @@ class Navbar extends Component {
 
     const { user, logout, isLoggedin } = this.props;	
     return (
-      
-      <nav className="navbar">
-      
-        <Link to={'/profile'} id='home-btn'>
-          <p>Perfil</p>
-        </Link>
-      
-        <Link to={'/info'} id='home-btn'>
-          <p>Info</p>
-        </Link>
 
-        <Link to={'/thoughtslist'} id='home-btn'>
-          <p>Pensamientos</p>
-        </Link>
-        {
-          isLoggedin ? 
-          (<>
-            <p className="navbar-user">  {user.nickname}</p>	
-            <button className="navbar-button" onClick={logout}>Cerrar sesión</button>	
-          </>) 
-         : 
-          (<>
-            <Link to="/login">
-              <button className="navbar-button">Ingresar</button>
+      isLoggedin ?
+      
+      (<nav className="navbar">
+
+
+      
+       
+            <Link to="/profile">
+            Perfil
             </Link>
-            <br />
-            <Link to="/signup">
-              <button className="navbar-button">Crear cuenta</button>
+       
+            <Link to="/thoughtslist">
+             Pensamientos
             </Link>
-          </>)
-        }
-      </nav>
+
+            <Link to="/info">
+             Info
+            </Link>
+          
+
+             {/* <p className="navbar-user"> {user.nickname}</p>	  */}
+            <img className="logout-img" src="/images/logout4.png" alt="" onClick={logout}/>
+         
+        
+      </nav>) : null
     );
   }
 }

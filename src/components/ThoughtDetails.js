@@ -4,6 +4,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";	
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
 
 
 
@@ -88,7 +90,7 @@ componentDidMount(){
     
         return (
             <div>
-              <h2>Detalles de una Pensamiento</h2>
+              <h2>Detalle de pensamiento</h2>
             
               <h6>Pensamiento automático: {this.state.automaticThought}</h6>
               <p>Intesidad: {this.state.intensity}</p>
@@ -106,12 +108,15 @@ componentDidMount(){
         
 
             <Link to={`/edit/${params.id}`}>
-            <button >
-            Editar un pensamiento</button>
+            <Button variant="primary"  input type="submit" value="Editar">
+           Modificar
+           </Button>
             </Link> 
             
             <div>
-            <button onClick={() => this.deleteThought()}>Eliminar Pensamiento</button>
+            <Button variant="primary"  input type="submit" value="Eliminar" onClick={() => this.deleteThought()}>
+             Eliminar
+           </Button>
             </div>
             
         </div> ) : null } 
@@ -122,9 +127,8 @@ componentDidMount(){
         
 
 
-         <Link to="/thoughtslist">
-         <button> Listado de pensamientos</button>
-         </Link>
+           
+
            
 
         

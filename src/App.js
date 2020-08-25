@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import { Switch } from "react-router-dom";
+import { Switch, Route} from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Signup from "./pages/Signup";
@@ -27,17 +27,22 @@ class App extends Component {
       <div className='container'>
 
       <AuthProvider>  
-        <Navbar />
-        <Home />
+      
+    
 
-        {/* <Info /> */}
+          <Navbar />
+
+     
      
      
   
         <Switch>
+        <AnonRoute exact path="/" component={Home} /> 
+        
         <AnonRoute path="/signup" component={Signup} />
          <AnonRoute path="/login" component={Login} />	
          <PrivateRoute path="/info" component={Info} />	
+  
         <PrivateRoute exact path="/thoughtslist" component={ThoughtsList} />
         <PrivateRoute exact path="/add" component={NewThought} />
         <PrivateRoute exact path="/edit/:id" component={EditThought} />

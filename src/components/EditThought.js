@@ -2,6 +2,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
 
 class EditThought extends Component {
     constructor (props){
@@ -87,61 +89,77 @@ render() {
     return (
       <div>
         <hr />
-        <h3>Editar un pensamiento</h3>
+
         <form onSubmit={this.handleFormSubmit}>
-        
-        <label>Pensamiento Automático:</label>
-           <textarea 
-           name="automaticThought"
-            value={this.state.automaticThought}
-            onChange={this.handleChange}
-            />
+           <h1>Agregar un nuevo pensamiento</h1>
+
+           <Form.Group>
+                <Form.Control size="lg" type="text" placeholder="Pensamiento Automático" name="automaticThought"
+                value={this.state.automaticThought}
+                onChange={e => this.handleChange(e)} />
+                <br />
+
+                <Form.Control
+                    as="select"
+                    className="my-1 mr-sm-2"
+                    id="inlineFormCustomSelectPref"
+                    custom   type="number"
+                    value={this.state.intensity} name="intensity" onChange={this.handleChange}
+                >
+                    <option value="0">Intensidad</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+
+                </Form.Control>
+               <br/>
+                <br/>
+                <Form.Control size="lg" type="text" placeholder="Pensamientos Alternativo"   name="alternativeThought"
+                value={this.state.alternativeThought}
+                 onChange={e => this.handleChange(e)} />
+
+                <br/>
+                <Form.Control size="lg" type="text" placeholder="Tarea Compensatoria"   name="task"
+                 value={this.state.task}
+                onChange={e => this.handleChange(e)} />
+                
+
+                <br/>
+
+                <Form.Control as="select"  value={this.state.category} name="category" onChange={this.handleChange}>
+                <option value="Todas las categorías">Todas las categorías</option>
+                <option value="Dinero">Dinero</option>
+                <option value="Familia">Familia</option>
+                <option value="Futuro">Futuro</option>
+                <option value="Pareja">Pareja</option>
+                <option value="Salud">Salud</option>
+                <option value="Trabajo">Trabajo</option>
+                <option value="Otra">Otra</option>
+                </Form.Control>
+                <br/>
+                <Button variant="primary"  input type="submit" value="Editar">
+                  Editar
+                </Button>
+               
+                </Form.Group>
+
+              
+
+           </form>
+
+         
 
 
-            <label>Intensidad:</label>
-           <input
-            type="number"
-            name="intensity"
-            value={this.state.intensity}
-            onChange={this.handleChange}
-           />
-
-           <label>Pensamiento Alternativo:</label>
-           <textarea 
-           name="alternativeThought"
-            value={this.state.alternativeThought}
-            onChange={this.handleChange}
-            />
 
 
-            <label>Tarea Compensatoria:</label>
-           <textarea 
-           name="task"
-            value={this.state.task}
-            onChange={this.handleChange}
-            />
-                  
-       <label>Categoria:</label>
 
-        <select name="category" onChange={this.handleChange}>
-          <option value="Todas">Todas las categorías</option>
-          <option value="Dinero">Dinero</option>
-          <option value="Familia">Familia</option>
-          <option value="Futuro">Futuro</option>
-          <option value="Pareja">Pareja</option>
-          <option value="Salud">Salud</option>
-          <option value="Trabajo">Trabajo</option>
-          <option value="Otra">Otra</option>
-
-        </select>
-
-
-          <input type="submit" value="Editar" />
-        </form>
-
- <Link to="/thoughtslist">
-         <button>Volver al listado de pensamientos</button>
-         </Link>
            
       </div>
     );

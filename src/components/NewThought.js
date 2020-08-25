@@ -61,71 +61,63 @@ class NewThought extends Component {
            <form onSubmit={this.handleFormSubmit}>
            <h1>Agregar un nuevo pensamiento</h1>
 
+           <Form.Group>
+                <Form.Control size="lg" type="text" placeholder="Pensamiento Automático" name="automaticThought"
+                value={this.state.automaticThought}
+                onChange={e => this.handleChange(e)} />
+                <br />
 
-           <label>Pensamiento Automático:</label>
-           <textarea 
-           name="automaticThought"
-           value={this.state.automaticThought}
-            onChange={e => this.handleChange(e)}
-            /> 
+                <Form.Control
+                    as="select"
+                    className="my-1 mr-sm-2"
+                    id="inlineFormCustomSelectPref"
+                    custom   type="number"
+                    value={this.state.intensity} name="intensity" onChange={this.handleChange}
+                >
+                    <option value="0">Intensidad</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
 
+                </Form.Control>
+               <br/>
+                <br/>
+                <Form.Control size="lg" type="text" placeholder="Pensamientos Alternativo"   name="alternativeThought"
+                value={this.state.alternativeThought}
+                 onChange={e => this.handleChange(e)} />
 
-            <label>Intensidad:</label>
-           <input
-            type="number"
-            name="intensity"
-            placeholder="0-10"
-            value={this.state.intensity}
-            onChange={e => this.handleChange(e)}
-           />
+                <br/>
+                <Form.Control size="lg" type="text" placeholder="Tarea Compensatoria"   name="task"
+                 value={this.state.task}
+                onChange={e => this.handleChange(e)} />
+                
 
-           <label>Pensamiento Alternativo:</label>
-           <textarea 
-           name="alternativeThought"
-           value={this.state.alternativeThought}
-            onChange={e => this.handleChange(e)}
-            />
+                <br/>
 
+                <Form.Control as="select"  value={this.state.category} name="category" onChange={this.handleChange}>
+                <option value="Todas las categorías">Todas las categorías</option>
+                <option value="Dinero">Dinero</option>
+                <option value="Familia">Familia</option>
+                <option value="Futuro">Futuro</option>
+                <option value="Pareja">Pareja</option>
+                <option value="Salud">Salud</option>
+                <option value="Trabajo">Trabajo</option>
+                <option value="Otra">Otra</option>
+                </Form.Control>
+                <br/>
+                <Button variant="primary"  input type="submit" value="Crear">
+                  Crear
+                </Button>
+               
+                </Form.Group>
 
-            <label>Tarea Compensatoria:</label>
-           <textarea 
-           name="task"
-           value={this.state.task}
-            onChange={e => this.handleChange(e)}
-            />
-                        
-            <label>Categoria:</label>
-
-            <select name="category" onChange={this.handleChange}>
-            <option value="Todas">Todas las categorías</option>
-            <option value="Dinero">Dinero</option>
-            <option value="Familia">Familia</option>
-            <option value="Futuro">Futuro</option>
-            <option value="Pareja">Pareja</option>
-            <option value="Salud">Salud</option>
-            <option value="Trabajo">Trabajo</option>
-            <option value="Otra">Otra</option>
-
-            </select>
-            
-                  
-                 
-
-
-
-
-            {/* <label>Categoria:</label>
-           <input
-            type="text"
-            name="category"
-            value={this.state.category}
-            onChange={e => this.handleChange(e)}
-           /> */}
-            
-            <input type="submit" value="Crear"/>
-
-           
-           
            </form>
       
            </div>
