@@ -91,10 +91,16 @@ render() {
       <div>
         <hr />
 
+        <h1>Agregar un nuevo pensamiento</h1>
         <form onSubmit={this.handleFormSubmit}>
-           <h1>Agregar un nuevo pensamiento</h1>
+       
+
+       
+        
+        
 
            <Form.Group>
+           <div className="form-style">
                 <Form.Label>Pensamiento Automático</Form.Label>
                 <Form.Control size="lg" type="text" placeholder="Pensamiento Automático" name="automaticThought"
                 value={this.state.automaticThought}
@@ -149,24 +155,17 @@ render() {
                 <option value="Otra">Otra</option>
                 </Form.Control>
                 <br/>
+          
+                </div>
                 <Button className="myButton" input type="submit" value="Editar">
                   Editar
                 </Button>
-               
                 </Form.Group>
-
               
-
            </form>
-
-         
-
-
-
-
-
-           
+        
       </div>
+      
     );
   }
 };

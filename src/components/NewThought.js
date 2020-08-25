@@ -58,10 +58,15 @@ class NewThought extends Component {
    render(){
        return(
            <div>
+
+          
            <form onSubmit={this.handleFormSubmit}>
-           <h1>Crear un nuevo pensamiento</h1>
+           <h2>Crear un nuevo pensamiento</h2>
+         
+          
 
            <Form.Group>
+           <div className="form-style">
                 <Form.Control size="lg" type="text" placeholder="Pensamiento Automático" name="automaticThought"
                 value={this.state.automaticThought}
                 onChange={e => this.handleChange(e)} />
@@ -87,7 +92,7 @@ class NewThought extends Component {
                     <option value="10">10</option>
 
                 </Form.Control>
-               <br/>
+        
                 <br/>
                 <Form.Control size="lg" type="text" placeholder="Pensamientos Alternativo"   name="alternativeThought"
                 value={this.state.alternativeThought}
@@ -112,14 +117,22 @@ class NewThought extends Component {
                 <option value="Otra">Otra</option>
                 </Form.Control>
                 <br/>
+                </div>
+            
+                </Form.Group>
                 <Button className="myButton"  input type="submit" value="Crear">
                   Crear
                 </Button>
-               
-                </Form.Group>
-
+           
+           
            </form>
-      
+
+          
+          
+               
+
+
+
            </div>
            
        );

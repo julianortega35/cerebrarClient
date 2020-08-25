@@ -4,7 +4,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";	
-import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
 
@@ -89,7 +88,8 @@ componentDidMount(){
       
     
         return (
-            <div>
+            <div >
+             <div className="form-style">
               <h2>Detalle de pensamiento</h2>
             
               <h6>Pensamiento automático: {this.state.automaticThought}</h6>
@@ -100,18 +100,17 @@ componentDidMount(){
               {this.state.userId ? (<p>Creado por: {this.state.userId.nickname}</p>) : null}
               
             
-            
+              </div>
         {  this.props.user._id === this.state.userId._id ? (
-        
-        <div>
-          
-        
+          <div>
 
+            <div>
             <Link to={`/edit/${params.id}`}>
             <Button className="myButton"  input type="submit" value="Editar">
            Modificar
            </Button>
             </Link> 
+            </div>
             
             <div>
             <Button className="myButton"  input type="submit" value="Eliminar" onClick={() => this.deleteThought()}>
@@ -124,21 +123,7 @@ componentDidMount(){
         <Link to="/add">
         <button className="myButton"> Nuevo pensamiento</button>
         </Link>
-        
-
-
-           
-
-           
-
-        
-         
-       
-
-       
-
-         
-
+ 
             </div>
         )
     }

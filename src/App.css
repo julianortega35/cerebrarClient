@@ -158,7 +158,7 @@ button.navbar-button {
   .links-style{
     text-decoration: none;
     color: rgb(99, 67, 67);
-    font-size: 20px;
+    font-size: 23px;
     text-align: center;
     
     }
@@ -247,5 +247,33 @@ button.navbar-button {
   
     }
     
-    
+     /* THOUGHTS DETAILS */
+
+
+    .form-style{
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center; 
+      border: solid 0.5px rgb(222, 211, 133);
+      margin: 20px;
+      padding: 30px;
+
+    }
+
+     /* EDIT THOUGHTS */
+
+
+     .form-style{
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center; 
+      border: solid 0.5px rgb(222, 211, 133);
+      margin: 20px;
+      padding: 30px;
+
+    }
+
+
 
