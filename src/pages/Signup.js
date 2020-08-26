@@ -56,6 +56,8 @@ class Signup extends Component {
       <Button variant="light" type="submit" value="Crear"  >
       Crear
       </Button>
+      <p>{this.props.errorMessage}</p>
+
       </div>
 
 </form>

@@ -71,11 +71,12 @@ componentDidMount(){
     axios
       .delete(`${process.env.REACT_APP_API_URI}/thoughts/${params.id}`, {withCredentials: true})
       .then(() => {
+        this.props.history.push("/thoughtslist")
       })
       .catch((err) => {
         console.log(err);
       });
-      return this.props.history.push("/thoughtslist")
+
      
   };
 

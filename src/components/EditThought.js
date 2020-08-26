@@ -66,7 +66,7 @@ class EditThought extends Component {
           }, {withCredentials: true})
         .then(()=>{
           
-          return this.props.history.push(`/details/${params.id}`)
+         this.props.history.push(`/details/${params.id}`)
         })
         .catch((error) => console.log (error));
     };

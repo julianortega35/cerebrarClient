@@ -42,9 +42,10 @@ class NewThought extends Component {
                 task: "",
                 category: "", 
             });
+            this.props.history.push("/thoughtslist")
         })
         .catch(error => console.log(error));
-        return this.props.history.push("/thoughtslist")
+       
    }; 
 
    

@@ -18,7 +18,7 @@ const withAuth = (WrappedComponent) => {
           <Consumer>
   {/* El componente <Consumer> provee un callback que recibe el "value" con el objeto Providers */}  
           { 
-            ({login, signup, user, logout, isLoggedin}) => {
+            ({login, signup, user, logout, isLoggedin, errorMessage}) => {
             return (
               <WrappedComponent 
                 login={login} 
@@ -26,6 +26,7 @@ const withAuth = (WrappedComponent) => {
                 user={user}
                 logout={logout}
                 isLoggedin={isLoggedin}
+                errorMessage={errorMessage}
                 {...this.props} />
             );
           }}
@@ -39,7 +40,7 @@ const withAuth = (WrappedComponent) => {
 
 //Provider
 class AuthProvider extends React.Component {
-    state = { isLoggedin: false, user: null, isLoading: true };
+    state = { isLoggedin: false, user: null, isLoading: true, errorMessage: "" };
 
 
     componentDidMount(){
@@ -54,7 +55,7 @@ class AuthProvider extends React.Component {
         
         auth.signup({ nickname, password })
           .then((user) => this.setState({ isLoggedin: true, user}) )
-          .catch((err) => console.log(err));
+          .catch((err) => this.setState({errorMessage: "Este apodo ya existe. Por favor elija otro"}) );
           // .catch((response) => this.setState({ message: response.data.statusMessage}));
       };
     
@@ -76,14 +77,14 @@ class AuthProvider extends React.Component {
 
 
 render () {
-    const { isLoading, isLoggedin, user} = this.state;
+    const { isLoading, isLoggedin, user, errorMessage} = this.state;
     const { login, logout, signup } = this; 
 
     return ( 
         isLoading ? 
     <div>Loading</div> 
     :
-    (<Provider value={{ isLoggedin, user, login, logout, signup}} >
+    (<Provider value={{ isLoggedin, user, login, logout, signup, errorMessage}} >
        {this.props.children}
     </Provider>)
     )	/*<Provider> "value={}" datos que estarán disponibles para todos los componentes <Consumer> */
