@@ -21,7 +21,7 @@ class Home extends Component {
 
      <h1 className="home-title">CEREBRAR</h1>
 
-        <p>Información</p>
+        
 
 
    
