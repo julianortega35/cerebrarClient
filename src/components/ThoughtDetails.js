@@ -90,7 +90,7 @@ componentDidMount(){
         return (
             <div >
 
-              <h2>Detalle de pensamiento</h2>
+              <h2 className="h2-style">Detalle de pensamiento</h2>
              <div className="form-style">
            
             
@@ -106,7 +106,7 @@ componentDidMount(){
         {  this.props.user._id === this.state.userId._id ? (
           <div>
 
-            <div>
+            <div className="butttomsStyle">
             <Link to={`/edit/${params.id}`}>
             <Button className="myButton"  input type="submit" value="Editar">
            Modificar
@@ -114,17 +114,20 @@ componentDidMount(){
             </Link> 
             </div>
             
-            <div>
+            <div className="butttomsStyle">
             <Button className="myButton"  input type="submit" value="Eliminar" onClick={() => this.deleteThought()}>
              Eliminar
            </Button>
             </div>
             
         </div> ) : null } 
-    
+
+          <div className="butttomsStyle">
         <Link to="/add">
         <button className="myButton"> Nuevo pensamiento</button>
         </Link>
+        </div>
+
  
             </div>
         )

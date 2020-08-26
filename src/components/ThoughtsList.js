@@ -78,7 +78,7 @@ render() {
 
       <div className="title-style">
       <div>
-      <h2>Listado de pensamientos</h2>
+      <h2 className="h2-style">Listado de pensamientos</h2>
       </div>
 
 
@@ -107,12 +107,16 @@ render() {
         
           </div>
 
-
-      <Link to="/add">
+        <div className="butttomsStyle">      
+        <Link to="/add">
         <button className="myButton">
-          Nuevo pensamiento
+        Nuevo pensamiento
         </button>
         </Link>
+        </div>
+
+
+
         </div>
       
         

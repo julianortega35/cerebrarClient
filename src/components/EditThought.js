@@ -1,10 +1,9 @@
 
 import React, { Component } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
-import Card from 'react-bootstrap/Card'
+
 
 class EditThought extends Component {
     constructor (props){
@@ -91,7 +90,7 @@ render() {
       <div>
         <hr />
 
-        <h1>Agregar un nuevo pensamiento</h1>
+        <h2 className="h2-style">Editar pensamiento</h2>
         <form onSubmit={this.handleFormSubmit}>
        
 
@@ -129,7 +128,7 @@ render() {
 
                 </Form.Control>
                <br/>
-                <br/>
+              
                 <Form.Label>Pensamientos Alternativo</Form.Label>
                 <Form.Control size="lg" type="text" placeholder="Pensamientos Alternativo"   name="alternativeThought"
                 value={this.state.alternativeThought}
@@ -157,9 +156,11 @@ render() {
                 <br/>
           
                 </div>
+                <div className="butttomsStyle">  
                 <Button className="myButton" input type="submit" value="Editar">
                   Editar
                 </Button>
+                </div>
                 </Form.Group>
               
            </form>

@@ -58,7 +58,7 @@ class Login extends Component {
      
 
      <div className="login-buttom" >
-      <Button variant="light" type="submit" value="Ingresar"  >
+      <Button  variant="light" type="submit" value="Ingresar"  >
       Ingresar
       </Button>
 

@@ -1,7 +1,7 @@
  
 import React, { Component } from 'react'
 import axios from "axios";
-import { Link } from "react-router-dom";
+
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
@@ -61,13 +61,13 @@ class NewThought extends Component {
 
           
            <form onSubmit={this.handleFormSubmit}>
-           <h2>Crear un nuevo pensamiento</h2>
+           <h2 className="h2-style">Nuevo pensamiento</h2>
          
           
 
            <Form.Group>
            <div className="form-style">
-                <Form.Control size="lg" type="text" placeholder="Pensamiento Automático" name="automaticThought"
+                <Form.Control type="text" placeholder="Pensamiento Automático" name="automaticThought"
                 value={this.state.automaticThought}
                 onChange={e => this.handleChange(e)} />
                 <br />
@@ -94,12 +94,12 @@ class NewThought extends Component {
                 </Form.Control>
         
                 <br/>
-                <Form.Control size="lg" type="text" placeholder="Pensamientos Alternativo"   name="alternativeThought"
+                <Form.Control  type="text" placeholder="Pensamientos Alternativo"   name="alternativeThought"
                 value={this.state.alternativeThought}
                  onChange={e => this.handleChange(e)} />
 
                 <br/>
-                <Form.Control size="lg" type="text" placeholder="Tarea Compensatoria"   name="task"
+                <Form.Control  type="text" placeholder="Tarea Compensatoria"   name="task"
                  value={this.state.task}
                 onChange={e => this.handleChange(e)} />
                 
@@ -120,9 +120,12 @@ class NewThought extends Component {
                 </div>
             
                 </Form.Group>
+
+                <div className="butttomsStyle">
                 <Button className="myButton"  input type="submit" value="Crear">
                   Crear
                 </Button>
+                </div>
            
            
            </form>

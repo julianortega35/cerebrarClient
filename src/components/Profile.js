@@ -44,8 +44,8 @@ class Profile extends Component {
        
 
             <div>
-                 <div className="profile-style">
-                <h3>Perfil de {nickname}</h3>
+                 <div className="h2-style">
+                <h2>Perfil de {nickname}</h2>
                 </div>
 
                 <div className="profile-style">

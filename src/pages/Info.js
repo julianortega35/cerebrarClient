@@ -10,11 +10,11 @@ class Info extends Component {
 
     return (
       <div>
-          <h4> Estrategias para regular pensamientos automáticos negativos</h4>
+          <h2 className="h2-style"> Estrategias para regular pensamientos automáticos negativos</h2>
 
         
        
-        <h5> Consejos</h5>
+        <h5 className="headings-style"> Consejos</h5>
         <div className="video-size">
         <div className="video-position">
           <ReactPlayer width={200} height={200}
@@ -29,7 +29,7 @@ class Info extends Component {
       </div>
       </div>
        
-        <h5> Meditaciones guiadas</h5>
+        <h5 className="headings-style"> Meditaciones guiadas</h5>
         <div className="video-size">
      
         <div className="video-position">
@@ -46,26 +46,23 @@ class Info extends Component {
       </div>
 
 
-      <h5>Enlaces de interés</h5>
+      <h5 className="headings-style">Enlaces de interés</h5>
       <div>
 
 
-{/* 
-      {this.state.session.user ? (
-      <Route exact path="/" component={MyComponent} />
-      ) : (
-      <Route exact path="/" render={() => (window.location = "https://redirectsite.com")} />
-    )} */}
 
 
+      <div className="info-links-style">
+      <a  className="info-links-style" target="_blank" href="https://psicopedia.org/wp-content/uploads/2013/06/Reestructuracion-Cognitiva-paso-a-apso.pdf">Guía sobre Reestructuración cognitiva</a>
+      </div>
 
-      <a target="_blank" href="https://psicopedia.org/wp-content/uploads/2013/06/Reestructuracion-Cognitiva-paso-a-apso.pdf">Guía sobre Reestructuración cognitiva</a>
-      <br/>
+      <div className="info-links-style">
+      <a className="info-links-style" target="_blank" href="https://www.uptituddigital.com/pensamientos-negativos/#La_importancia_de_conocerse_para_superar_el_pesimismo">Cómo evitar pensamientos negativos</a>
+      </div>
 
-      <a target="_blank" href="https://www.uptituddigital.com/pensamientos-negativos/#La_importancia_de_conocerse_para_superar_el_pesimismo">Cómo evitar pensamientos negativos</a>
-      <br/>
-      <a target="_blank" href="http://www.asapar.com/descargas/mindfulness_02.pdf">Mindfulness para principiantes (Libro)</a>
-      
+      <div className="info-links-style">
+      <a className="info-links-style" target="_blank" href="http://www.asapar.com/descargas/mindfulness_02.pdf">Mindfulness para principiantes (Libro)</a>
+      </div>
       </div>
 
 
